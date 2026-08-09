@@ -1,0 +1,49 @@
+{% comment %}
+ blocks/_mycustomslide
+ {% endcomment %}
+  <div class="slide" data-slide>
+     <div class="myslide">
+    {% content_for 'blocks' %}
+    </div>
+</div>
+
+{% stylesheet %}
+  .myslide{
+    display: grid;
+    grid-template-columns:40% 60%;
+  }
+  @media (max-width: 780px) {
+  .myslide{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+{% endstylesheet %}  
+{% schema %}
+{
+    "name":"Slide",
+    "settings": [],
+    "blocks": [
+        {
+            "type": "_myimage"
+        },
+        {
+            "type": "_mygroup"
+        }
+    ],
+    "presets": [
+        {
+        "name":"Slide",
+        "blocks": [
+             {
+            "type": "_mygroup",
+            },
+            {
+            "type": "_myimage",
+          },
+        ]
+        }
+
+    ]
+}
+{% endschema %}

@@ -1,0 +1,189 @@
+{% comment %}
+ blocks/_mygroup
+{% endcomment %}
+<div class="mygrp" style="--width:{{ block.settings.widthrange }}%;
+     --direction:{{ block.settings.directionselect }}; --justify-content:{{ block.settings.justifycontent }};
+     --align-items:{{ block.settings.alignitems }}; --bgcolor:{{ block.settings.color }}; 
+    --padding-top:{{ block.settings.padding_top }}px; --padding-bottom:{{ block.settings.padding_bottom}}px;
+      --padding-right:{{ block.settings.padding_right}}px; --padding-left:{{ block.settings.padding_left}}px;
+    "
+    >
+    {% content_for 'blocks' %}
+</div>
+{% stylesheet %}
+  .mygrp{
+    width: var(--width);
+    height: 100%;
+    display: flex;
+    flex-direction: var(--direction);
+    justify-content: var(--justify-content);
+    align-items: var(--align-items);
+    background-color: var(--bgcolor);
+    padding-top: var(--padding-top);
+    padding-bottom: var(--padding-bottom);
+    padding-right: var(--padding-right);
+    padding-left: var(--padding-left);
+    gap:8px;
+  }
+  @media (max-width: 780px) {
+  .mygrp{
+    padding: 30px;
+    min-height:350px;
+    }
+}
+ @media (max-width: 480px) {
+  .mygrp{
+    padding: 10px;
+    gap:2px;
+    }
+
+}
+{% endstylesheet %}    
+{% schema %}
+{
+    "name": "Group",
+    "settings": [
+        {
+            "type": "range",
+            "id": "widthrange",
+             "label": "Width",
+             "min": 30,
+             "max": 100,
+             "step": 1,
+             "unit": "%",
+            "default":100
+        },
+        {
+            "type": "color",
+            "id": "color",
+            "label": "Background Color",
+            "alpha":true
+        },
+        {
+            "type": "select",
+            "id": "directionselect",
+            "label": "Direction",
+            "options": [
+                {
+                    "value": "row",
+                    "label": "Horizontal"
+                },
+                {
+                    "value": "column",
+                    "label": "Vertical"
+                }
+            ],
+            "default":"column"
+        },
+        {
+            "type": "select",
+            "id": "justifycontent",
+            "label": "Justify content",
+            "info": "If direction is Horizontal, justify-content controls horizontal alignment. If direction is Vertical, justify-content controls vertical alignment.",
+            "options": [
+                {
+                   "value":"flex-start" ,
+                   "label": "Start" 
+                },
+                {
+                   "value":"center" ,
+                   "label": "Center" 
+                },
+                {
+                   "value":"flex-end" ,
+                   "label": "End" 
+                },
+            ],
+            "default":"center"
+        },
+         {
+            "type": "select",
+            "id": "alignitems",
+            "label": "Align items",
+            "info": "If direction is Horizontal,align items controls vertical alignment. If direction is Vertical,align items controls horizontal alignment.",
+            "options": [
+                {
+                   "value":"flex-start" ,
+                   "label": "Start" 
+                },
+                {
+                   "value":"center" ,
+                   "label": "Center" 
+                },
+                {
+                   "value":"flex-end" ,
+                   "label": "End" 
+                },
+            ],
+            "default":"center"
+        },
+         {
+      "type": "range",
+      "id": "padding_top",
+      "label": "top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+     {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+     {
+      "type": "range",
+      "id": "padding_left",
+      "label": "left",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+     {
+      "type": "range",
+      "id": "padding_right",
+      "label": "right",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    ],
+    "blocks": [
+        {
+            "type": "text"
+        },
+        {
+            "type": "_headingtext"
+        },
+        {
+            "type": "_mycustombutton"
+        }
+    ],
+    "presets": [
+        {
+            "name": "My Group",
+            "blocks": [
+                {
+            "type": "text"
+        },
+        {
+            "type": "_headingtext"
+        },
+        {
+            "type": "_mycustombutton"
+        }
+            ]
+        }
+    ]
+}
+{% endschema %}

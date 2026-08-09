@@ -1,0 +1,281 @@
+<section class="custom-collection-slider">
+<div data-section-id="{{section.id}}" class="collection-slider-section">
+ {% content_for 'blocks' %}
+<div class="swiper collection-slider" data-rewind="{{ section.settings.rewind }}" 
+  data-loop="{{ section.settings.loop}}" data-autoplay="{{ section.settings.autoplay }}">
+  <div class="swiper-wrapper">
+    {% for collection in collections %}
+    {% comment %} <div class="swiper-slide">
+      <div class="my-collection-card">
+            {% if collection.image %}
+              {{ collection.image | image_url: width: 1200 | image_tag:class:"mycollectionimg" }}
+            {% else %}
+              {{ 'lifestyle-1' | placeholder_svg_tag: 'my-col-slider-placeholder' }}
+            {% endif %}
+            <div class="my-collection-content">
+            <h3>{{ collection.title }}</h3>
+            <a href="{{ collection.url }}" class="view-all">View All →</a>
+             </div>
+      </div>
+    </div> {% endcomment %}
+    <div class="swiper-slide">
+    {% content_for 'block', type:'my-collection-card',id:"mycolcard",collection:collection %} 
+     </div>
+  {% endfor %}
+  </div>
+  {% if section.settings.showdots %}
+  <div class="swiper-pagination"></div>
+  {% endif %}
+  {% if section.settings.showarrows %}
+  <div class="swiper-button-prev">
+  </div>
+  <div class="swiper-button-next">
+  </div>
+  {% endif %}
+</div>
+</div>
+</section>
+
+{% stylesheet %}
+.collection-slider {
+  max-width: 1360px;
+}
+  .collection-slider-section{
+  max-width:1360px;
+  margin: 0px auto;
+}
+ .swiper-slide{
+ width :324px ;
+  height:354px;
+ }
+.custom-collection-slider{
+  background-color: rgb(255, 247, 234);
+   padding: 60px 20px;
+}
+.my-collection-card{
+  background: #ffffff;
+  overflow: hidden;
+   box-shadow: 0 2px 4px #00000029;
+   font-family: 'Playfair Display', serif;
+}
+.my-collection-card:hover{
+  transform: scale(1.05);
+}
+.mycollectionimg,.my-col-slider-placeholder{
+  width: 100%;
+  height:250px;
+  object-fit: cover;
+  display: block;
+   
+}
+
+.my-collection-content{
+  text-align: center;
+   padding: 20px;
+   border: 1px solid #00000029;
+   color: #252525;
+   height: 104px;
+}
+
+.my-collection-content h3{
+  font-size: clamp(17px, 1.6vw, 20px);
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: inherit;
+}
+
+.view-all{
+  font-size: clamp(10px, 1.2vw, 14px);
+  color: inherit;
+  text-decoration: none;
+}
+
+.view-all:hover{
+  text-decoration: underline;
+}
+ .swiper-button-prev,
+.swiper-button-next{
+  width: 50px;
+  height: 50px;
+  background-image: url('https://cdn.shopify.com/s/files/1/0945/1759/2365/files/behindarrow.avif?v=1776257776');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+ .swiper-button-prev::after,
+.swiper-button-next::after{
+  display: none;
+}
+ /* .arrow-icon {
+  position: relative;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+} */
+
+.swiper-button-prev::before,.swiper-button-next::before{
+  content: "";
+  /* position: absolute;
+  left: 0;
+  top: 50%; */
+  transform: translateY(-50%);
+  width: 14px;
+  height: 2px;
+  background: black;
+}
+
+.swiper-button-prev::after,.swiper-button-next::after {
+  content: "";
+  /* position: absolute;
+  right: 0;
+  top: 50%; */
+  transform: translateY(-50%);
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-left: 6px solid black;
+}
+ .swiper-button-prev::after {
+  transform: rotate(180deg);
+} 
+.swiper-button-prev{
+  left: 10px;
+}
+
+.swiper-button-next{
+  right: 10px;
+} 
+.swiper-pagination-bullet{
+  background: #ccc;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active{
+  background: #000;
+}
+@media (max-width: 768px) {
+   .swiper-slide{ width:100%; }
+}
+{% endstylesheet %}
+{% javascript %}
+  function initSwiperSlider(container) {
+    if(!container) return;
+    const slides = document.querySelectorAll('.collection-slider .swiper-slide');
+    if(slides.length <= 1) return;
+       const rewind = container.dataset.rewind==='true';
+      const loop = container.dataset.loop==='true';
+      const autoplay = container.dataset.autoplay==='true';
+    new Swiper(container, {
+    slidesPerView: 'auto',
+    spaceBetween: 24,
+    loop: loop,
+    rewind:rewind,
+    autoplay:autoplay,
+    pagination: { 
+      el: container.querySelector('.swiper-pagination'), 
+      clickable: true 
+    },
+    navigation: { 
+      nextEl:container.querySelector('.swiper-button-next'), 
+      prevEl: container.querySelector('.swiper-button-prev')
+    },
+    
+  });
+  }
+   function destroySlider(container) {
+    if(container && container.swiper){
+        container.swiper.destroy();
+    }
+  }
+  document.addEventListener('DOMContentLoaded',()=>{
+    document.querySelectorAll('.collection-slider').forEach((container)=>{
+        initSwiperSlider(container);
+      })
+  });
+  if(window.Shopify && Shopify.designMode){
+     document.addEventListener('shopify:section:unload', (event)=> {
+      const sectionId = event.detail.sectionId;
+      const sectionElement = document.querySelector(`[data-section-id="${sectionId}"]`);
+      if (sectionElement) {
+      const sliderContainer = sectionElement.querySelector('.collection-slider');
+      destroySlider(sliderContainer);
+    }
+     });
+    document.addEventListener('shopify:section:load', ()=>{
+      document.querySelectorAll('.collection-slider').forEach((container)=>{
+        initSwiperSlider(container);
+      })
+    });
+  }
+{% endjavascript %}
+{% schema %}
+{
+    "name": "Collection Slider",
+    "settings":[
+      {
+            "type": "text",
+             "label": "Heading",
+             "id": "heading",
+             "default":"Shop By Collection"
+      },
+      {
+        "type": "checkbox",
+        "label": "Show Dots",
+        "id": "showdots",
+        "default":false
+      },
+      {
+        "type": "checkbox",
+        "label": "Show Arrows",
+        "id": "showarrows",
+        "default":true
+      },
+        {
+        "type": "checkbox",
+        "label": "Rewind",
+        "id": "rewind",
+        "default":true,
+        "visible_if": "{{ section.settings.loop==false }}",
+        "info": "Loop works only when rewind is false"
+       },
+        {
+        "type": "checkbox",
+        "label": "Loop",
+        "id": "loop",
+        "default":false,
+        "visible_if": "{{ section.settings.rewind==false }}"
+       },
+       {
+        "type": "checkbox",
+        "label": "Autoplay",
+        "id": "autoplay",
+        "default":false,
+       }
+    ],
+    "blocks": [
+      {
+        "type": "_collection-custom-heading"
+      }
+    ],
+    "presets": [
+     {
+        "name": "Collection Slider",
+         "blocks":[
+           {
+            "type": "_collection-custom-heading"
+           },
+         ]
+     }
+    ]
+}
+{% endschema %}

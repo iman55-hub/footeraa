@@ -1,0 +1,527 @@
+{% assign unique_popup_id = 'popup-content' | append:product.id |append: section_id %}
+{% assign color_option = nil %}
+{% assign size_option = nil %}
+{% for option in product.options_with_values %}
+  {% assign option_name = option.name | downcase %}
+  {% if option_name == 'color' or option_name == 'colour' %}
+     {% assign color_option = option %}
+     {% elsif  option_name == 'size' or option_name == 'sizes' %}
+      {% assign size_option = option %}
+  {% endif %}
+{% endfor %}
+{% assign color_option_position = color_option.position | minus:1  %}
+{% assign size_option_position = size_option.position | minus:1  %}
+<div class="popup-content-parent" id="{{unique_popup_id  }}">
+  <div class="media-column">
+    <img src="{{ product.featured_image | image_url: width: 1200 }}" alt="popup product image"  class="popup-main-image" >
+  </div> 
+   <div class="details-column">
+    <a href="{{ product.url }}" class="product-full-url"> View All</a>
+    <a href="{{ product.url }}">{{product.title  }}</a>
+    <div class="popup-price-section">
+      <span class="popup-price">{{ product.price | money }}</span>
+      {% if product.compare_at_price > product.price %}
+        <span class="popup-compare-price">{{ product.compare_at_price | money }}</span>
+      {% endif %}
+    </div> 
+    <div class="quantity-section"> 
+      <label class="quantity-label">Quantity:</label>
+      <div class="quantity-btns">
+        <button class="popup-plus-button" data-qty-plus>+</button>
+        <input type="number" class="popup-qty-input" value="1" min="1"> 
+        <button class="popup-minus-button" data-qty-minus>-</button>
+      </div> 
+    </div>
+     {% if color_option!=blank %}
+     <div class="color-swatch-section">
+       <label>Color: <span class="selected-color-name"></span></label>
+       <div class="color-swatches">
+        {% for value in color_option.values %}
+          {% for variant in product.variants %}
+            {% assign matched_op = nil %}
+            {% assign variant_color = variant.options[color_option_position] %}
+             {% if value==variant_color %}
+              {% assign matched_op = variant %}
+              {% break %}
+             {% endif %}
+            {% endfor %}
+            {% assign  swatch_img_url= product.featured_image | image_url: width: 600  %}
+            {% if matched_op!=blank and matched_op.featured_image !=blank%}
+              {% assign swatch_img_url =  matched_op.featured_media | image_url: width:600 %}
+            {% else %}
+              {% for image in product.images %}
+                {% if image.alt contains value %}
+                  {% assign swatch_img_url =  image | image_url: width:600 %}
+                {% endif %}
+                {% endfor %}
+              {% endif %}
+              <div class="color-swatch-wrapper" data-color-value="{{ value }}">
+                   <img src="{{swatch_img_url}}" alt="{{ value }}" class="popup_swatch_img">
+                   <span class="swatch_color_name">{{ value }}</span>
+                   {% if matched_op!=blank and matched_op.available==false %}
+                     <span class="sold-out-badge">Sold Out</span>
+                   {% endif %}
+
+              </div>  
+            {% endfor %}
+       </div> 
+       </div> 
+       {% endif %}
+       {% if size_option!=blank %}
+        <div class="size-swatch-section">
+           <label>Size:</label>
+           <div class="size-swatches">
+            {% for value in size_option.values %}
+                <button type="button" class="size-btn" data-size-value="{{ value }}">{{ value }}</button>
+          {% endfor %}
+           </div> 
+        </div>  
+       {% endif %}
+       <script type="application/json" class="popup-data-transfer">
+        {
+          "colorPosition":{{ color_option_position  | default: -1 }},
+          "sizePosition":{{ size_option_position   | default: -1}}
+        }
+       </script> 
+       <input type="hidden"  class="selected_variant_id" value="{{ product.selected_or_first_available_variant.id }}"/>
+       <button class="popup-add-to-cart">
+         <span class="popup-cart-btn-text">Add to Cart</span>
+          <span class="btn-spinner hidden">
+          <svg class="spinner" viewBox="0 0 50 50">
+            <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="4"></circle>
+          </svg>
+        </span>
+       </button>
+       <button class="buy-now-btn" data-buy-now data-product-id="{{ unique_id }}">
+        Buy with <svg xmlns="http://www.w3.org/2000/svg" width="51" height="20" aria-labelledby="shop-logo" viewBox="0 -2 206 81">
+  <title id="shop-logo">Shop</title>
+  <path id="shop-logo" fill="#fff" d="M29.514 35.18c-7.934-1.697-11.469-2.36-11.469-5.374 0-2.834 2.392-4.246 7.176-4.246 4.207 0 7.283 1.813 9.546 5.363.171.274.524.369.812.222l8.927-4.447a.616.616 0 0 0 .256-.864c-3.705-6.332-10.55-9.798-19.562-9.798-11.843 0-19.2 5.752-19.2 14.898 0 9.714 8.96 12.169 16.904 13.865 7.944 1.697 11.49 2.36 11.49 5.373 0 3.014-2.584 4.436-7.742 4.436-4.763 0-8.297-2.15-10.433-6.321a.63.63 0 0 0-.843-.274L6.47 52.364a.623.623 0 0 0-.278.843c3.535 7.006 10.785 10.947 20.47 10.947 12.334 0 19.787-5.658 19.787-15.088s-9.001-12.169-16.935-13.865v-.021ZM77.353 16.036c-5.062 0-9.536 1.77-12.75 4.92-.203.19-.534.053-.534-.221V.622a.62.62 0 0 0-.63-.622h-11.17a.62.62 0 0 0-.63.622v62.426a.62.62 0 0 0 .63.621h11.17a.62.62 0 0 0 .63-.621V35.664c0-5.289 4.11-9.345 9.653-9.345 5.542 0 9.557 3.972 9.557 9.345v27.384a.62.62 0 0 0 .63.621h11.17a.62.62 0 0 0 .63-.621V35.664c0-11.505-7.646-19.618-18.356-19.618v-.01ZM118.389 14.255c-6.065 0-11.767 1.823-15.847 4.467a.618.618 0 0 0-.202.833l4.922 8.292c.182.295.566.4.865.22a19.82 19.82 0 0 1 10.262-2.78c9.749 0 16.914 6.785 16.914 15.75 0 7.64-5.734 13.297-13.006 13.297-5.926 0-10.037-3.403-10.037-8.207 0-2.75 1.185-5.005 4.271-6.596a.607.607 0 0 0 .246-.864l-4.645-7.754a.632.632 0 0 0-.759-.264c-6.225 2.276-10.593 7.755-10.593 15.109 0 11.126 8.981 19.428 21.507 19.428 14.629 0 25.147-9.998 25.147-24.338 0-15.372-12.237-26.603-29.066-26.603l.021.01ZM180.098 15.951c-5.649 0-10.689 2.055-14.373 5.68a.313.313 0 0 1-.534-.222v-4.362a.62.62 0 0 0-.63-.621H153.68a.62.62 0 0 0-.63.621v62.331a.62.62 0 0 0 .63.622h11.169a.62.62 0 0 0 .631-.622v-20.44c0-.274.331-.41.533-.231 3.674 3.371 8.532 5.342 14.096 5.342 13.102 0 23.321-10.463 23.321-24.054 0-13.592-10.23-24.054-23.321-24.054l-.011.01Zm-2.103 37.54c-7.454 0-13.103-5.847-13.103-13.58 0-7.734 5.638-13.582 13.103-13.582 7.464 0 13.091 5.753 13.091 13.581 0 7.829-5.553 13.581-13.102 13.581h.011Z"></path>
+</svg>
+      </button>
+    </div> 
+  </div>  
+  {% stylesheet %}
+     .popup-content-parent{
+       display:grid;
+       grid-template-columns: 1fr 1fr;
+    }
+    .details-column{
+      display:flex;
+      flex-direction: column;
+    }
+    .color-swatches{
+    display:flex;
+    }
+    .popup_swatch_img{
+      width:75px;
+      height:75px;
+      display:block;
+      object-fit: cover;
+      border: 1px solid rgb(214, 214, 214);
+      transition: all 0.2s;
+    }
+    .popup_swatch_img:hover {
+          border: 1px solid rgba(40, 33, 33, 0.55);
+    }
+   .color-swatch-wrapper.active .popup_swatch_img{
+     border: 2px solid black;
+    }
+    .size-swatches{
+      display: flex;
+    }
+    .size-btn{
+      padding: 10.5px 21px;
+      border: 1px solid gainsboro;
+      background: white;
+      color:black;
+      transition: all 0.2s;
+    }
+    .size-btn.active{
+      background: black;
+      color: white;
+     border-color: rgba(40, 33, 33, 0.55);
+    }
+    .size-btn:hover{
+      border-color: #000;
+    }
+    .spinner{
+     width:20px;
+     height: 20px;
+     animation: spinner 0.8s linear infinite;
+    }
+    .spinner .path{
+     stroke:rgb(40, 33, 33);
+     stroke-linecap: round;
+     animation: path 1s ease-in-out infinite;
+    }
+    @keyframes spinner{
+    100%{ transform: rotate(360deg);}
+    }
+    @keyframes path{
+    0%{ stroke-dasharray: 1,140;stroke-dashoffset:0; }
+    50%{stroke-dasharray: 88,140; stroke-dashoffset: -35;} 
+    100%{stroke-dasharray: 88,140; stroke-dashoffset: -125;}
+    }
+    .buy-now-btn {
+  width: 100%;
+  padding: 15.75px;
+  background: #5A31F4;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 10px 0;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap:2px;
+}
+.buy-now-btn:hover {
+  background: #ad9de4;
+  transform: translateY(-1px);
+}
+.buy-now-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+   transform: none;
+}
+
+    .popup-add-to-cart{
+    width: 100%;
+  padding: 15.75px;
+  background: white;
+  color: rgb(40, 33, 33);
+  border: 1px solid rgb(40, 33, 33);
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.2s;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-block: 10.5px 2px;
+    }
+    .popup-add-to-cart:hover:not(:disabled) {
+  outline: 1px solid rgb(40, 33, 33);
+}
+
+  {% endstylesheet %}
+  <script>
+    ( function(){
+      let unique_id = "{{ unique_popup_id }}";
+      let container = document.getElementById(unique_id);
+      if(!container) return;
+      let popupMainImg = container.querySelector('.popup-main-image');
+      let popupPrice = container.querySelector('.popup-price');
+      let popupComparePrice = container.querySelector('.popup-compare-price');
+      let popupQty =  container.querySelector('.popup-qty-input');
+      let popupPlusBtn =  container.querySelector('.popup-plus-button');
+      let popupMinusBtn =  container.querySelector('.popup-minus-button');
+      let selectedColorName = container.querySelector('.selected-color-name');
+      let colorWrappers = container.querySelectorAll('.color-swatch-wrapper');
+      let sizeWrappers = container.querySelectorAll('.size-btn');
+      let selectedVarId =  container.querySelector('.selected_variant_id');
+      let addToCart = container.querySelector('.popup-add-to-cart');
+      let cartText = container.querySelector('.popup-cart-btn-text');
+      let cartSpinner = container.querySelector('.btn-spinner');
+      let buyBtn = container.querySelector('.buy-now-btn');  
+      let mappingScript = container.querySelector('.popup-data-transfer'); 
+      let variantMapping = null;
+       if(mappingScript){
+        try {
+      variantMapping = JSON.parse(mappingScript.textContent);
+     } catch(e) {
+     console.error("Invalid JSON");
+          }
+      }
+      let variants = {};
+      {% for variant in product.variants %}
+        variants[{{variant.id}}] = {
+          id:{{variant.id }},
+         title:"{{ variant.title | escape | replace:"'", "\\'"}}",
+         comparePrice: '{% if variant.compare_at_price > variant.price %}{{ variant.compare_at_price | money }}{% endif %}',
+         price:"{{ variant.price | money }}",
+         available:{{ variant.available }},
+         featuredImage: '{%  if variant.featured_image!=blank %}{{ variant.featured_image | image_url: width:1200 }} {% else %} {{ product.featured_image | image_url: width:1200 }}{% endif %}',
+         options:{{  variant.options | json }}
+
+        }
+        {%  endfor %}
+        let currentVariantId = {{  product.selected_or_first_available_variant.id }};
+        let currentVariant = variants[currentVariantId];
+        function getCurrentColor(){
+          let currentColor = null;
+          colorWrappers.forEach((wrapper)=>{
+            if(wrapper.classList.contains('active')){
+               currentColor = wrapper.dataset.colorValue;
+            }
+          });
+          return currentColor;
+        }    
+        function getCurrentSize(){
+          let currentSize = null;
+          sizeWrappers.forEach((wrapper)=>{
+            if(wrapper.classList.contains('active')){
+               currentSize = wrapper.dataset.sizeValue;
+            }
+          });
+          return currentSize;
+        }   
+        function getCurrentVariantId(color,size){
+           if(color && size){
+           for( entry of Object.entries(variants)){
+              let id = entry[0];
+              let variant = entry[1];
+              let opt = variant.options;
+                if(opt && opt.includes(color) && opt.includes(size)){
+                  return id;
+                }
+             } 
+            }
+            if(color && !size ){
+               for( entry of Object.entries(variants)){
+              let id = entry[0];
+              let variant = entry[1];
+              let opt = variant.options;
+                if(opt && opt.includes(color)){
+                  return id;
+                }
+             } 
+            }
+            if(!color && size ){
+               for( entry of Object.entries(variants)){
+              let id = entry[0];
+              let variant = entry[1];
+              let opt = variant.options;
+                if(opt && opt.includes(size)){
+                  return id;
+                }
+             } 
+            }
+            return null;
+        }
+        function updateVariantUI(variantId){
+         let variant = variants[variantId];
+         if(!variant) return;
+         currentVariantId = variantId;
+         currentVariant = variant;
+         if(selectedVarId){
+          selectedVarId.value = variantId;
+        }
+         if(popupPrice){
+         popupPrice.textContent = variant.price;
+        } 
+        if(popupComparePrice){
+          if(variant.comparePrice && variant.price && variant.comparePrice >  variant.price ){
+          popupComparePrice.textContent = variant.comparePrice;
+          }
+          else{
+             popupComparePrice.textContent = '';
+          }
+        }
+        if(popupMainImg){ 
+          popupMainImg.src =  variant.featuredImage;
+        }
+        if(addToCart)
+         addToCart.disabled = !variant.available;
+         if(buyBtn)
+         buyBtn.disabled = !variant.available;
+        let colorVal = variant.options[variantMapping?.colorPosition];
+        colorWrappers.forEach((wrapper)=>{
+         let wrapperColor = wrapper.dataset.colorValue;
+         if(colorVal === wrapperColor ){
+          wrapper.classList.add('active');
+         }
+         else{
+          wrapper.classList.remove('active');
+         }      
+        });
+        if(selectedColorName && colorVal ) selectedColorName.textContent = colorVal;
+        let sizeVal = variant.options[variantMapping?.sizePosition];
+
+        sizeWrappers.forEach((wrapper) => {
+          let currentSize = wrapper.dataset.sizeValue;
+          if(sizeVal == currentSize ){
+           wrapper.classList.add('active');
+          }
+        else{
+          wrapper.classList.remove('active');
+         }      
+        });                                  
+        }
+        colorWrappers.forEach((wrapper)=>{
+          wrapper.addEventListener('click',(e)=>{
+            e.preventDefault();
+            e.stopPropagation();
+          let colorVal = e.currentTarget.dataset.colorValue;
+          let sizeVal = getCurrentSize();
+         let varId = getCurrentVariantId(colorVal,sizeVal);
+          if(varId){
+           updateVariantUI(varId);
+          }
+          else{
+          console.log("variant Id is not available")
+          }
+          })
+        });
+         sizeWrappers.forEach((wrapper)=>{
+          wrapper.addEventListener('click',(e)=>{
+             e.preventDefault();
+            e.stopPropagation();
+          let sizeVal = e.currentTarget.dataset.sizeValue;
+          let colorVal = getCurrentColor();
+         let varId = getCurrentVariantId(colorVal,sizeVal);
+          if(varId){
+           updateVariantUI(varId);
+          }
+          else{
+          console.log("variant Id is not available")
+          }
+          })
+        });
+        popupMinusBtn.addEventListener('click',(e)=>{
+         e.preventDefault();
+         e.stopPropagation();
+         let val = parseInt(popupQty.value);
+         if(val>1) popupQty.value = val - 1;
+        });
+         popupPlusBtn.addEventListener('click',(e)=>{
+         e.preventDefault();
+         e.stopPropagation();
+         let val = parseInt(popupQty.value);
+           if (isNaN(val) || val < 1) {
+               val = 1;
+            }
+           popupQty.value = val + 1;
+        });
+         popupQty.addEventListener('change',(e)=>{
+         e.preventDefault();
+         e.stopPropagation();
+         let val = parseInt(e.currentTarget.value);
+          if(isNaN(val) || val < 1)
+            e.currentTarget.value = 1;
+        });
+       async function refreshCartDrawer(){
+        const cartDrawer = document.querySelector('cart-drawer-component');
+        if (!cartDrawer) return;
+        let cartItems = cartDrawer.querySelector('cart-items-component');
+         if(!cartItems && !cartItems.sectionId) return;
+         let url = new URL(window.location.href);
+          url.searchParams.set('section_id',cartItems.sectionId);
+          try{
+            let response = await fetch(url);
+            let data = await response.text();
+            let popupDom = new DOMParser();
+            let popupParser = popupDom.parseFromString(data,'text/html');
+            let newSec = popupParser.getElementById(`shopify-section-${cartItems.sectionId}`);
+            let currentSec = document.getElementById(`shopify-section-${cartItems.sectionId}`);
+            if(newSec && currentSec ){
+            currentSec.innerHTML = newSec.innerHTML;
+            }
+          }
+          catch(err){
+          console.error('Error refreshing cart drawer:', err);
+          }
+        }
+        if(addToCart){
+        addToCart.addEventListener('click',async(e)=>{
+        e.preventDefault();
+        e.stopPropagation();
+        addToCart.disabled = true;
+        let varId = parseInt(selectedVarId?.value) || currentVariantId;
+        let qty = parseInt(popupQty.value) || 1;
+        if(cartText)
+        cartText.classList.add('hidden');
+        if(cartSpinner)
+        cartSpinner.classList.remove('hidden');
+         try{
+          let res = await fetch('/cart/add.js',{
+           method: 'POST',
+          headers: {
+         'Content-Type': 'application/json',
+         'Accept': 'application/json'
+         },
+         body: JSON.stringify({id:varId,quantity:qty})
+          });
+          if (res.ok){
+          await refreshCartDrawer();
+          if(cartSpinner)
+          cartSpinner.classList.add('hidden');
+          if(cartText){
+            cartText.classList.remove('hidden');
+            cartText.textContent = 'Added';
+          }
+          setTimeout(() => {
+          addToCart.disabled = false; 
+          cartText.textContent = 'Add to Cart';
+           }, 1500);
+         }
+         else {
+          throw new Error('Failed to add to cart');
+        }
+        }
+         catch(err){
+          console.log(err);
+          if(cartSpinner)
+          cartSpinner.classList.add('hidden');
+          if(cartText){
+            cartText.classList.remove('hidden');
+            cartText.textContent = 'Error';
+            setTimeout(() => {
+          addToCart.disabled = false; 
+          cartText.textContent = 'Add to Cart';
+           }, 1500);
+         }
+          }
+        })
+        }
+        if(buyBtn){
+        buyBtn.addEventListener('click',async(e)=>{
+         e.preventDefault();
+        e.stopPropagation();
+        buyBtn.disabled = true;
+        let varId = parseInt(selectedVarId?.value) || parseInt(currentVariantId);
+        let qty = parseInt(popupQty.value) || 1;
+        let variant = variants[varId];
+        if (!variant || !variant.available) {
+          buyBtn.disabled = false;
+        alert('This variant is not available');
+        return;
+           }
+        try{
+          let buyres = await fetch('/cart/add.js',{
+           method: 'POST',
+          headers: {
+         'Content-Type': 'application/json',
+         'Accept': 'application/json'
+         },
+         body: JSON.stringify({id:varId,quantity:qty})
+          });
+        if(buyres.ok){
+          buyBtn.disabled=false;
+          window.location.href = '/checkout';
+        }    
+        }
+        catch(err){
+        console.error('Buy now error:', error);
+        alert('Something went wrong. Please try again.');
+        }
+        });
+        }
+       updateVariantUI(currentVariantId) 
+    })();
+  </script>  
+{% schema %}
+{
+  "name": "Popup Content",
+  "presets": [
+    {
+      "name": "Popup Content"
+    }
+  ]
+}
+{% endschema %}

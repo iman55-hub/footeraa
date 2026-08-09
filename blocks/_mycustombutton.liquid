@@ -1,0 +1,71 @@
+<div  class="custom-button-block">
+  <a 
+    href="{{ block.settings.button_link }}" 
+    class="custom-btn"
+    style="
+      background-color: {{ block.settings.bg_color }};
+      color: {{ block.settings.text_color }};
+      border-radius: {{ block.settings.border_radius }}px;
+    "
+  >
+    {{ block.settings.button_text }}
+  </a>
+</div>
+
+<style>
+.custom-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.custom-btn:hover {
+  opacity: 0.85;
+}
+</style>
+{% schema %}
+{
+  "name": "Custom Button",
+  "settings": [
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "POP TO IT"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#ff2d2d"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Border Radius",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "default": 4
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Button"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,313 @@
+{% comment %}
+  blocks/_my-custom-card
+{% endcomment %}
+
+{% assign item = item %}
+{% assign popup_id = 'popup-' | append: item.id | append:section_id %}
+{% assign unique_section_id = 'featured-product-' | append: item.id  | append:section_id %}
+
+<div class="popup-parent-card">
+  <a href="{{ item.url }}" class="product-link">
+    {% if item.featured_image != blank %}
+      {{ item.featured_image | image_url: width: 1200 | image_tag: class: "popup-parent-image" }}
+    {% else %}
+      {{ 'lifestyle-1' | placeholder_svg_tag: 'popup-parent-image' }}
+    {% endif %}
+    <div class="popup-parent-content">
+      <h3>{{ item.title }}</h3>
+      <p>{{ item.price | money }}</p>
+    </div>
+  </a>
+  <button class="popup-opener" data-popup-trigger="{{ popup_id }}">
+    {% if item.variants.size > 1 %}
+      Choose Options
+    {% else %}
+      Add to Cart
+    {% endif %}  
+  </button>
+  </div>
+
+{% comment %} Modal Popup Structure {% endcomment %}
+{% comment %} <div class="popup-modal-wrapper" id="{{ popup_id }}">
+  <div class="popup-modal-overlay"></div>
+  <div class="popup-modal-container">
+    <button class="popup-modal-close">&times;</button>
+    <div class="popup-modal-body">
+      {% content_for 'block', type: 'popup-content', id: 'popup1234', closest.product: item,section_id:unique_section_id %}
+    </div>
+  </div>
+</div> {% endcomment %}
+<div class="popup-modal-wrapper" id="{{ popup_id }}">
+  <div class="popup_overlay"></div>
+  <div class="popup-modal-body">
+    <button class="popup-modal-close">&times;</button>
+    <div class="popup-modal-content">
+    {%  content_for 'block',type:"popup-content",id:"popup123",product:item,section_id:unique_section_id %} 
+  </div>
+  </div>
+</div>
+{% stylesheet %}
+  .popup-parent-image {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+    aspect-ratio: 1/1;
+  }
+  
+.popup-parent-card{
+  border:1px solid rgb(40,33,33);
+  padding:10px;
+  background:white;
+  display:flex;
+  flex-direction:column;
+  aspect-ratio:9/16;
+   transition: transform 0.10s ease-in-out; 
+}
+   
+  .product-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  .popup-parent-card:hover .popup-parent-image{
+   transform:scale(1.02);
+}
+
+.popup-parent-image{
+  width:100%;
+  max-width:240px;
+  margin:0 auto;
+  aspect-ratio:1/1;
+  object-fit:cover;
+  object-position: center center;
+  padding:10px;
+}
+
+  .popup-parent-content{
+  margin-top:18px;
+  flex-grow:1px;
+  display:flex;
+  flex-direction:column;
+  padding:25px;
+}
+.popup-parent-content h3{
+  font-size:15.75px;
+  font-weight:700;
+  margin-bottom:-3px;
+  letter-spacing:0.01em;
+  color:rgb(40,33,33);
+}
+.popup-parent-content h3:hover{
+  text-decoration:underline;
+}
+.popup-parent-content p{
+  font-size:clamp(14px,5vw,17px);
+  font-weight:600;
+  letter-spacing:1.03px;
+  color:rgb(40,33,33);
+}
+.popup-opener{
+  padding:15px;
+  border:1px solid rgb(40,33,33);
+  background:white;
+  cursor:pointer;
+  width:100%;
+  font-size:clamp(15px,5vw,17px);
+  letter-spacing:0.01em;
+  transition:.2s ease;
+  color: rgb(40,33,33);
+  font-weight:600;
+  border-radius:3px;
+}
+
+.popup-opener:hover{
+  background:#111;
+  color:white;
+}
+.popup-modal-wrapper{
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+  display: none;
+}  
+.popup-modal-wrapper.active{
+   display: flex;
+}
+.popup_overlay{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top:0;
+  left:0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+}
+.popup-modal-body{
+position: relative;
+background: white;
+z-index: 1;
+background: white;
+max-width:950px;
+width:94%;
+max-height:70vh;
+box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+animation: slideIn 0.3s ease-out;
+overflow-y: auto;
+}
+@keyframes slideIn{
+  from{
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to{
+     opacity: 1;
+    transform: translateY(0);
+  }
+}
+ .popup-modal-close{
+   position: absolute;
+   top:15px;
+   right: 15px;
+   border-radius: 50%;
+   border: 1px solid gainsboro;
+   background: white;
+   cursor: pointer;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  font-size: 28px;
+ } 
+  .popup-modal-close:hover {
+    background: #f0f0f0;
+  }
+.popup-modal-content{
+padding: 30px;
+}
+{% endstylesheet %}
+
+{% comment %} <script>
+(function() {
+  // Open popup
+  function handlePopupClick(e) {
+    const trigger = e.target.closest('.popup-opener');
+    if (!trigger) return;
+    
+    const popupId = trigger.getAttribute('data-popup-trigger');
+    if (!popupId) return;
+    
+    e.preventDefault();
+    e.stopPropagation();
+    
+    const wrapper = document.getElementById(popupId);
+    if (wrapper) {
+      wrapper.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+  }
+  
+  // Close popup via close button
+  function handleCloseClick(e) {
+    const closeBtn = e.target.closest('.popup-modal-close');
+    if (!closeBtn) return;
+    
+    const wrapper = closeBtn.closest('.popup-modal-wrapper');
+    if (wrapper) {
+      wrapper.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  }
+  
+  // Close popup via overlay click
+  function handleOverlayClick(e) {
+    const overlay = e.target.closest('.popup-modal-overlay');
+    if (!overlay) return;
+    
+    const wrapper = overlay.closest('.popup-modal-wrapper');
+    if (wrapper) {
+      wrapper.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  }
+  
+  // Close popup on ESC key
+  function handleKeydown(e) {
+    if (e.key !== 'Escape') return;
+    
+    const activePopup = document.querySelector('.popup-modal-wrapper.active');
+    if (activePopup) {
+      activePopup.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  }
+  
+  // Attach event listeners
+  document.body.addEventListener('click', handlePopupClick);
+  document.body.addEventListener('click', handleCloseClick);
+  document.body.addEventListener('click', handleOverlayClick);
+  document.addEventListener('keydown', handleKeydown);
+})();
+</script> {% endcomment %}
+<script>
+  (
+    function(){
+     function handlePopupClick(e){
+      let trigger = e.target.closest('.popup-opener');
+      if(!trigger) return;
+       let currentpopupOpener = trigger.getAttribute('data-popup-trigger');
+        if(!currentpopupOpener) return;
+       e.preventDefault();
+       e.stopPropagation();
+        let openedpopup = document.getElementById(currentpopupOpener);
+        if(openedpopup){
+        openedpopup.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    }
+    function closePopup(e){
+      let closebtn = e.target.closest('.popup-modal-close');
+      if(!closebtn) return;
+       let popupWrapper = closebtn.closest('.popup-modal-wrapper.active');
+      if(!popupWrapper) return;
+      popupWrapper.classList.remove('active');
+       document.body.style.overflow = '';   
+    }
+    function OverLayClick(e){
+     let popupOverlay = e.target.closest('.popup_overlay');
+     if(!popupOverlay) return;
+      let popupWrapper = popupOverlay.closest('.popup-modal-wrapper.active');
+      if(!popupWrapper) return;
+      popupWrapper.classList.remove('active');
+       document.body.style.overflow = '';
+    }
+    function EscKeyClose(e){
+     if(e.key!='Escape') return;
+     let popupWrapper = document.querySelector('.popup-modal-wrapper.active');
+     if(!popupWrapper) return;
+      popupWrapper.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    document.body.addEventListener('click',handlePopupClick);
+        document.body.addEventListener('click',OverLayClick);
+     document.body.addEventListener('click',closePopup);
+    document.body.addEventListener('keydown',EscKeyClose);
+    })();
+</script>  
+{% schema %}
+{
+  "name": "My Product Card",
+  "presets": [
+    {
+      "name": "My Product Card",
+    }
+  ]
+}
+{% endschema %}

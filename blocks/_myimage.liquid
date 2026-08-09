@@ -1,0 +1,35 @@
+{% comment %}
+ blocks/_myimage
+{% endcomment %}
+{% if block.settings.image_picker!=blank %}
+    {% assign image_alt = block.settings.image_picker.alt | default: "Slide image" %}
+{{ block.settings.image_picker | image_url: width:1200 | image_tag:class:"blkimg",loading:"lazy",alt:image_alt }}
+{% else %}
+{{ 'lifestyle-1' | placeholder_svg_tag: 'blkimg placeholder' }}
+{% endif %}
+{% stylesheet %}
+  .blkimg{
+    width: 100%;
+    object-fit: cover;
+    display: block;
+    aspect-ratio: 4/3;
+  }
+
+{% endstylesheet %}
+{% schema %}
+{
+    "name":"Image",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "image_picker",
+             "label": "image_picker"
+        },
+    ],
+    "presets": [
+        {
+            "name": "Image"
+        }
+    ]
+}
+{% endschema %}
