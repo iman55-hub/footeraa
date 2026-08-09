@@ -2432,6 +2432,19 @@
           "core-tech-t-shirt-hoodie-gray-heather"
         ]
       }
+    },
+    "best_seller_zWTp7H": {
+      "type": "best-seller",
+      "name": "Best Sellers",
+      "settings": {
+        "best_sellers": "Best Sellers",
+        "product_list": [
+          "core-tech-t-shirt-hoodie-pink",
+          "abc2",
+          "core-tech-t-shirt-hoodie-agean-blue-heather",
+          "core-tech-t-shirt-hoodie-black-heather"
+        ]
+      }
     }
   },
   "order": [
@@ -2446,6 +2459,7 @@
     "customslideshow_jBtGYa",
     "my_collection_carousal_Rt8AdF",
     "popup_products_7mYWWg",
-    "best_seller_JJ3hLE"
+    "best_seller_JJ3hLE",
+    "best_seller_zWTp7H"
   ]
 }
