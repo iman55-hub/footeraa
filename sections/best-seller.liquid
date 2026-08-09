@@ -1,0 +1,62 @@
+<best-seller class="best-seller-section section" data-section-id="{{ section.id }}">
+    <h2 class="best-seller-heading">{{ section.settings.best_sellers }}</h2>
+     <div class='sec-grid'>
+        {% for product in section.settings.product_list %}
+            {%  render 'my-product-card' , product:product %}
+        {% endfor %}
+    </div>    
+</best-seller>
+<script src="{{ 'best-seller.js' | asset_url }}" type="module"></script>
+{% stylesheet %}
+  .best-seller-section{
+    padding-block: 40px;
+}
+ .best-seller-heading{
+ font-size: clamp(1.5rem, 4vw + 1rem, 2.5rem);
+ text-align: center;
+ margin:0;
+ }
+  .sec-grid{
+   display: grid;
+   grid-template-columns: repeat(4,1fr);
+   gap:10px;
+   margin-top: 20px;
+  }
+  @media (max-width: 749px) { 
+  .sec-grid{
+     grid-template-columns: repeat(2,1fr);
+  }
+  }
+  /* @media (max-width: 576px) {
+ .sec-grid{
+     grid-template-columns: repeat(1,1fr);
+  }
+} */
+
+{% endstylesheet %}  
+{% schema %}
+{
+    "name":"Best Sellers",
+    "settings": [
+      {
+        "type": "text",
+        "id": "best_sellers",
+        "label": "Section Heading",
+         "default":"Best Sellers"
+      },
+      {
+
+        "type": "product_list",
+        "id": "product_list",
+        "label": "Products",
+         "limit": 4
+      }
+      
+    ],
+    "presets": [
+    {
+       "name":"Best Sellers"
+    }
+    ]
+}
+{% endschema %}
