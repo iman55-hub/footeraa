@@ -2419,6 +2419,19 @@
           "abc2"
         ]
       }
+    },
+    "best_seller_JJ3hLE": {
+      "type": "best-seller",
+      "name": "Best Sellers",
+      "settings": {
+        "best_sellers": "Best Sellers",
+        "product_list": [
+          "core-tech-t-shirt-hoodie",
+          "core-tech-t-shirt-hoodie-pink",
+          "abc2",
+          "core-tech-t-shirt-hoodie-gray-heather"
+        ]
+      }
     }
   },
   "order": [
@@ -2432,6 +2445,7 @@
     "section_6ppQyq",
     "customslideshow_jBtGYa",
     "my_collection_carousal_Rt8AdF",
-    "popup_products_7mYWWg"
+    "popup_products_7mYWWg",
+    "best_seller_JJ3hLE"
   ]
 }
