@@ -2432,6 +2432,7 @@
           "core-tech-t-shirt-hoodie-gray-heather"
         ]
       }
+<<<<<<< Updated upstream
     },
     "best_seller_zWTp7H": {
       "type": "best-seller",
@@ -2445,6 +2446,8 @@
           "core-tech-t-shirt-hoodie-black-heather"
         ]
       }
+=======
+>>>>>>> Stashed changes
     }
   },
   "order": [
@@ -2459,7 +2462,11 @@
     "customslideshow_jBtGYa",
     "my_collection_carousal_Rt8AdF",
     "popup_products_7mYWWg",
+<<<<<<< Updated upstream
     "best_seller_JJ3hLE",
     "best_seller_zWTp7H"
+=======
+    "best_seller_JJ3hLE"
+>>>>>>> Stashed changes
   ]
 }
