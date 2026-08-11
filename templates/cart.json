@@ -259,7 +259,7 @@
       }
     },
     "best_sellers_WGzCrA": {
-      "type": "best-sellers",
+      "type": "best-seller",
       "name": "Best Sellers",
       "settings": {
         "best_sellers": "Best Sellers",
