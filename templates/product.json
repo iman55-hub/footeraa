@@ -462,24 +462,10 @@
         "padding-block-start": 48,
         "padding-block-end": 48
       }
-    },
-    "best_sellers_9RhPn6": {
-      "type": "best-seller",
-      "name": "Best Sellers",
-      "settings": {
-        "best_sellers": "Best Sellers",
-        "product_list": [
-          "core-tech-t-shirt-hoodie-pink",
-          "core-tech-t-shirt-hoodie",
-          "abc2",
-          "abc1"
-        ]
-      }
     }
   },
   "order": [
     "main",
-    "product_recommendations_qggXJq",
-    "best_sellers_9RhPn6"
+    "product_recommendations_qggXJq"
   ]
 }
