@@ -642,7 +642,7 @@
     "custom_css": [
       "button.slideshow-control.button-secondary.button-unstyled.icon-play {display: none;}",
       "button.slideshow-control.button-secondary.button-unstyled.icon-pause {display: none;}",
-      "._1fragem5u _1fragemws [aria-labelledby=\"billingAddress\"] {display: none;}"
+      "._1fragem5u _1fragemws [aria-labelledby=\"billingAddress\"] {display: none !important;}"
     ]
   }
 }
