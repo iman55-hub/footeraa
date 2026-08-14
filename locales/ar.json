@@ -918,134 +918,7 @@
         "delivered": "تم التسليم",
         "delivered_title": "تم تسليم طلبك",
         "delivered_description_html": "تم تسليم طلبك إلى العنوان الذي زودتنا به. إذا لم تستلمه أو كانت لديك أي مشاكل أخرى، فيرجى %{contact_us}.",
-        "delivered_local_title": "تم تسليم طلبك",
-        "delivered_local_description_html": "ألم تستلم طلبك؟ %{let_us_know}.",
-        "choose_payment_method_later": "اختر طريقة الدفع لاحقًا",
-        "picked_up_title": "تم استلام طلبك",
-        "picked_up_description_html": "تم استلام طلبك في %{location_name} بتاريخ %{date}.",
-        "contact_us": "اتصل بنا",
-        "contact_us_lowercase": "اتصل بنا",
-        "contact_us_html": "هل تحتاج للمساعدة؟ %{contact_us}",
-        "updated_time": "تم التحديث قبل %{time_ago}",
-        "failure": "لم يتم التسليم",
-        "failed_title": "تعذّر تسليم طلبك",
-        "failed_contact_merchant": "اتصل بـ %{company} لترتيب التسليم.",
-        "failed_contact_merchant_no_company": "اتصل بنا لترتيب التسليم.",
-        "non_shippable_title": "لقد اكتمل طلبك",
-        "let_us_know": "أعلمنا",
-        "login_title": "قم بتسجيل الدخول لعرض تفاصيل الطلب كاملةً",
-        "login_description": "يمكنك العثور على رقم طلبك في الإيصال الذي تلقيته عبر البريد الإلكتروني.",
-        "login_description_phone": "يمكنك العثور على رقم طلبك في الإيصال الذي تلقيته عبر رسالة نصية.",
-        "login_not_customer_html": "ألست %{name}؟ يمكنك %{link}",
-        "login_reorder_link_text": {
-          "one": "اشترِ هذا المنتج أيضًا",
-          "other": "اشترِ هذه المنتجات أيضًا"
-        },
-        "customer_information_hidden_fields_message": "سجّل الدخول لعرض جميع معلومات العميل.",
-        "cancelled_title": "تم إلغاء طلبك",
-        "cancelled_description": "تم إلغاء طلبك بتاريخ %{date}. اتصل بنا إذا كانت لديك أي أسئلة.",
-        "order_number_label": "رقم الطلب",
-        "customer_validation_error": "أدخل بريدًا إلكترونيًا أو رقم طلب صالحًا.",
-        "customer_validation_error_phone": "أدخل رقم هاتف أو طلب صالحًا.",
-        "login": "تسجيل الدخول",
-        "unfulfilled_items_title": "جارٍ التحضير للشحن",
-        "unfulfilled_items_description": "نحن حاليًا نجهز هذه العناصر للشحن.",
-        "marker": {
-          "current": "موقع الشحنة الحالي",
-          "shipping": "عنوان الشحن"
-        },
-        "pick_up_in_store_marker": {
-          "current": "موقع الشحنة الحالي",
-          "shipping": "موقع الالتقاء"
-        },
-        "fulfillment": {
-          "fulfilled_table_title": "المنتجات في هذه الشحنة",
-          "unfulfilled_table_title": "جارٍ تجهيز المنتجات للشحن",
-          "product_image_label": "صورة المنتج",
-          "description_label": "الوصف",
-          "quantity_label": "الكمية"
-        },
-        "order_updates_description_missing": "لا تتلقى تحديثات الشحن.",
-        "order_updates_subscribe_to_email_notifications": "تلقَّ تحديثات الشحن عبر البريد الإلكتروني",
-        "order_updates_subscribe_to_email_or_phone_notifications": "احصل على تحديثات الشحن عبر البريد الإلكتروني أو الرسائل النصية",
-        "order_updates_subscribe_to_phone_notifications": "تلقّ تحديثات الشحن عبر الرسائل النصية",
-        "order_updates_submit_subscription": "إرسال",
-        "track_shipment": "تتبع الشحنة",
-        "other_options": "خيارات أخرى",
-        "delivery_information_label": "معلومات التسليم:",
-        "gift_card_sent_confirmation": "بطاقات الهدايا المرسلة",
-        "qr_code": {
-          "send_link_to_phone": "أو أرسل رابطًا إلى هاتفك",
-          "title": "تتبّع على هاتفك"
-        },
-        "shop_qr_with_sms_upsell": {
-          "qr_code": {
-            "title": "امسح بهاتفك"
-          },
-          "sms": {
-            "title": "أو أرسل رابطًا إلى هاتفك"
-          }
-        },
-        "view_business_customer_account": "عرض الحساب",
-        "breadcrumbs_submitted": "تم التقديم",
-        "breadcrumbs_in_review": "قيد المراجعة",
-        "breadcrumbs_confirmed": "تم التأكيد",
-        "missing_shipping_address_banner": {
-          "title": "لا يحتوي الطلب على عنوان شحن",
-          "text_html": "%{contact_us} لإضافة عنوانك",
-          "contact_us": "اتصل بنا"
-        },
-        "first_payment_complete": "تم الدفع الأول بنجاح",
-        "in_store_purchase": "الشراء من المتجر",
-        "company_location_section_title": "الشركة والموقع",
-        "thank_you_ready_for_picked_up": "تم استلام طلبك من %{address}.",
-        "ready_for_delivery": "جاهز للتسليم",
-        "order_updates_subscribe_to_email_notifications_failed": "لا يمكننا تخزين هذا البريد الإلكتروني للتحديثات. حاول مرة أخرى أو استخدم بريدًا إلكترونيًا آخر.",
-        "order_updates_subscribe_to_email_notifications_email_already_exists": "البريد الإلكتروني الذي أدخلته موجود بالفعل.",
-        "subscriptions_management": {
-          "title": "اشتراك",
-          "description": "توجه إلى حسابك لعرض اشتراكاتك وإدارتها.",
-          "button_label": "إدارة اشتراكك"
-        },
-        "manage_order_label": "إدارة طلبك",
-        "gift_card_confirmation_by_text_typ": {
-          "one": "ستتلقى رسالة نصية تتضمن بطاقة الهدايا الخاصة بك خلال بضع دقائق.",
-          "other": "ستتلقى رسالة نصية تتضمن بطاقات الهدايا الخاصة بك في غضون بضع دقائق."
-        },
-        "gift_card_confirmation_by_email_typ": {
-          "one": "ستتلقى بريدًا إلكترونيًا يحتوي على بطاقة الهدية الخاصة بك في غضون دقائق قليلة.",
-          "other": "ستتلقى بريدًا إلكترونيًا يتضمن بطاقات الهدايا الخاصة بك في غضون دقائق قليلة."
-        },
-        "gift_card_email_title": {
-          "one": "أُرسلت بطاقة الهديّة عبر البريد الإلكتروني.",
-          "other": "أُرسلت بطاقات الهدايا عبر البريد الإلكتروني"
-        },
-        "gift_card_text_title": {
-          "one": "تم إرسال بطاقة الهدية برسالة نصية",
-          "other": "تم إرسال بطاقات الهدايا عن طريق الرسائل النصية"
-        },
-        "resend_gift_cards_by_email": "أعد إرسال البريد الإلكتروني",
-        "resend_gift_cards_by_text": "أعد إرسال الرسالة النصية",
-        "gift_card_resent_confirmation": {
-          "one": "تمت إعادة إرسال بطاقة الهدايا.",
-          "other": "تم إعادة إرسال بطاقات الهدايا."
-        },
-        "gift_card_resend_failure": {
-          "one": "حدثت مشكلة في إعادة إرسال بطاقة الهدية الخاصة بك. يُرجى المحاولة مرة أخرى أو الاتصال بنا.",
-          "other": "حدثت مشكلة في إعادة إرسال بطاقات الهدايا الخاصة بك. حاول مرة أخرى أو اتصل بنا."
-        },
-        "vat_invoices": {
-          "title": "فواتير ضريبة القيمة المضافة"
-        },
-        "verify_shop_account_title": "تحقق من حسابك في Shop",
-        "verify_shop_account_message": "تم حفظ معلوماتك باستخدام Shop، تحقق من حسابك لاستخدامها تلقائيًا في ملايين المتاجر.",
-        "verify_shop_account_cta": "التحقق من حسابك",
-        "verify_shop_account_confirmation": "تم حفظ تفاصيل الدفع",
-        "announcement": {
-          "close": "إغلاق",
-          "expand": "توسيع",
-          "collapse": "انهيار"
-        }
+        "delivered_local_title": "تم تسليم طلبك"
       },
       "open_graph_meta_tag": {
         "title_with_products": {
@@ -1373,20 +1246,67 @@
           "add_label": "أضف بطاقة هدية أو رصيد متجر"
         }
       },
-      "vaulted": {
-        "change_button": "تغيير",
-        "loading_section": "تحميل {{section}}…"
-      },
-      "review": {
-        "title": "مراجعة",
-        "review_title": "أكمل طلبك",
-        "review_and_confirm_title": "مراجعة وتأكيد",
-        "checkout_as_guest": "الدفع كضيف",
-        "account_more_actions": "إجراءات إضافية لهذا الحساب",
-        "checkout_a_different_way": "جرّب طريقة مختلفة",
-        "blocks": {
-          "contact_method_title": "جهات الاتصال"
+      "taxes": {
+        "vat_number": {
+          "status": {
+            "invalid_format": {
+              "pl": "أرقام تعريف ضريبة القيمة المضافة البولندية (VAT) تتكون من PL و10 أحرف",
+              "pt": "تحتوي أرقام ضريبة القيمة المضافة في البرتغال على PT و9 أحرف",
+              "ro": "أرقام التعريف الضريبي الرومانية (VAT) تتكون من \"RO\" و 10 أحرف",
+              "sk": "تحتوي أرقام التعريف الضريبي في سلوفاكيا على \"SK\" و10 أحرف.",
+              "si": "أرقام التعريف الضريبي في سلوفينيا تتكون من SI و8 أحرف.",
+              "es": "أرقام تعريف ضريبة القيمة المضافة في إسبانيا تتكون من ES و9 رموز",
+              "se": "تحتوي أرقام التعريف الضريبي في السويد على SE و12 حرفًا",
+              "gb": "تتكون أرقام ضريبة القيمة المضافة في المملكة المتحدة من GB أو XI و5-12 حرفًا"
+            },
+            "invalid_number": {
+              "at": "أدخل رقم ضريبة القيمة المضافة النمساوي الصحيح",
+              "be": "أدخل رقم ضريبة القيمة المضافة البلجيكي صالحًا",
+              "bg": "أدخل رقم ضريبة قيمة مضافة بلغارياً صحيحاً",
+              "hr": "أدخل رقم ضريبة القيمة المضافة الكرواتي الصالح",
+              "cy": "أدخل رقم ضريبة القيمة المضافة القبرصي الصحيح",
+              "cz": "أدخل رقم ضريبة قيمة مضافة تشيكي صحيح",
+              "dk": "أدخل رقم ضريبة قيمة مضافة دنماركيًا صحيحًا",
+              "ee": "أدخل رقم تعريف ضريبي إستوني صالح",
+              "fi": "أدخل رقم ضريبة قيمة مضافة فنلنديًا صحيحًا",
+              "fr": "أدخل رقم ضريبة القيمة المضافة الفرنسي الصحيح",
+              "de": "أدخل رقمًا ضريبيًا ألمانيًا صالحًا",
+              "gr": "أدخل رقم ضريبة القيمة المضافة اليوناني الصحيح",
+              "hu": "أدخل رقم ضريبة القيمة المضافة المجري الصحيح",
+              "ie": "أدخل رقم ضريبة القيمة المضافة الأيرلندي الصحيح",
+              "it": "أدخل رقم ضريبة القيمة المضافة (VAT) الإيطالي صالحًا",
+              "lv": "أدخل رقم تعريف ضريبة القيمة المضافة اللاتفي الصحيح",
+              "lt": "أدخل رقم VAT ليتوانيا صالحًا",
+              "lu": "أدخل رقم ضريبة القيمة المضافة اللوكسمبورغي الصحيح",
+              "mt": "أدخل رقم ضريبة قيمة مضافة (VAT) مالطي صالح",
+              "nl": "أدخل رقم ضريبة قيمة مضافة هولندي صالح",
+              "pl": "أدخل رقم ضريبة قيمة مضافة بولندي صالحًا",
+              "pt": "أدخل رقم ضريبة القيمة المضافة (VAT) البرتغالي الصحيح",
+              "ro": "أدخل رقم ضريبة القيمة المضافة الروماني الصحيح",
+              "sk": "أدخل رقم ضريبة القيمة المضافة (VAT) سلوفاكيًا صحيحًا",
+              "si": "أدخل رقم VAT سلوفيني صالح",
+              "es": "أدخل رقم ضريبة قيمة مضافة إسباني صالحًا",
+              "se": "أدخل رقم ضريبة القيمة المضافة السويدي (VAT) الصحيح",
+              "gb": "أدخل رقم تعريف ضريبة القيمة المضافة (VAT) صالح في المملكة المتحدة"
+            },
+            "service_unavailable": "خدمة التحقق غير متاحة",
+            "service_error": "خدمة التحقق غير متاحة"
+          },
+          "accessibility": {
+            "status": {
+              "validating": "التحقق من رقم ضريبة القيمة المضافة قيد التنفيذ",
+              "valid": "الرقم الضريبي صحيح",
+              "applied": "تم تطبيق إعفاء ضريبة القيمة المضافة",
+              "domestic": "لم يتم تطبيق الإعفاء من ضريبة القيمة المضافة",
+              "invalid_number": "فشل الإعفاء من ضريبة القيمة المضافة",
+              "service_unavailable": "تعذر التحقق من الإعفاء من ضريبة القيمة المضافة",
+              "service_error": "تعذر التحقق من الإعفاء من ضريبة القيمة المضافة"
+            }
+          }
         }
+      },
+      "address_management": {
+        "saved_with_store": "تم الحفظ مع هذا المتجر"
       }
     },
     "notices": {
@@ -1544,6 +1464,76 @@
         "twenty_four_hours": "عادة ما تكون جاهزة خلال 24 ساعة",
         "two_to_four_days": "جاهز عادةً في غضون 2-4 أيام"
       }
+    },
+    "pagination": {
+      "previous": "السابق",
+      "next": "التالي"
+    },
+    "links": {
+      "powered_by_shopify": "مدعوم بواسطة Shopify",
+      "learn_more": "تعرف على المزيد"
+    },
+    "feed": {
+      "more": "المزيد"
+    },
+    "attributes": {
+      "email": "بريد إلكتروني",
+      "password": "كلمة المرور",
+      "password_confirmation": "تأكيد كلمة المرور",
+      "first_name": "الاسم الأول",
+      "last_name": "اسم العائلة",
+      "body": "الجسم",
+      "signature": "العنوان"
+    },
+    "addresses": {
+      "zip_code": "الرمز البريدي",
+      "postal_code": "الرمز البريدي",
+      "postcode": "الرمز البريدي",
+      "pincode": "الرمز البريدي",
+      "region": "المنطقة",
+      "prefecture": "محافظة",
+      "province": "مقاطعة",
+      "state": "ولاية",
+      "state_and_territory": "الولاية/الإقليم",
+      "county": "مقاطعة",
+      "emirate": "إمارة",
+      "governorate": "محافظة",
+      "confirm": "هل أنت متأكد من أنك ترغب في حذف هذا العنوان؟"
+    },
+    "collections": {
+      "sorting": {
+        "manual": "مميز",
+        "best_selling": "الأكثر مبيعاً",
+        "az": "أبجديًا، أ-ي",
+        "za": "أبجدياً، من ي-أ",
+        "price_ascending": "السعر، من الأقل للأعلى",
+        "price_descending": "السعر، من الأعلى إلى الأقل",
+        "date_ascending": "التاريخ، من الأقدم إلى الأحدث",
+        "date_descending": "تاريخ، من الأحدث إلى الأقدم",
+        "most_relevant": "الأكثر صلة"
+      }
+    },
+    "errors": {
+      "blank": "لا يمكن أن يكون فارغًا",
+      "blocked_address": "هذا الموقع غير مدعوم",
+      "credit_card_session_expired": "انتهت صلاحية تفويض بطاقة الائتمان، يرجى إعادة إدخال معلومات الدفع الخاصة بك. لم يتم خصم أي مبلغ من بطاقتك.",
+      "empty": "لا يمكن أن يكون فارغاً",
+      "invalid_email": "يجب أن يكون عنوان بريد إلكتروني صالحًا",
+      "discount_disabled": "تم تعطيل هذا الخصم",
+      "discount_expired": "هذا الخصم لم يعد صالحًا.",
+      "discount_limit_reached": "لقد وصل هذا الخصم إلى حد الاستخدام الأقصى",
+      "discount_not_found": "تعذر العثور على خصم صالح يطابق الرمز الذي أدخلته",
+      "customer_already_used_once_per_customer_discount_notice": "لقد وصل هذا الخصم إلى حد الاستخدام الأقصى",
+      "gift_card_already_applied": "تم تطبيق الرمز بالفعل على سلة مشترياتك",
+      "gift_card_code_invalid": "الرمز غير صالح",
+      "gift_card_currency_mismatch": "لا يمكن استخدام بطاقة الهدايا هذه لإتمام عملية الشراء. يُرجى الاتصال بـ %{shop_name} لإعادة إصدارها.",
+      "gift_card_depleted": "لا توجد أموال متبقية على بطاقة الهدايا هذه",
+      "gift_card_disabled": "بطاقة الهدايا معطلة",
+      "gift_card_expired": "البطاقة هدية منتهية الصلاحية",
+      "invalid": "غير صالح",
+      "bad_domain": "يحتوي على اسم نطاق غير صالح",
+      "taken": "تم الاستيلاء عليها بالفعل",
+      "contains_html_tags": "لا يمكن أن تحتوي على وسوم HTML"
     }
   },
   "customer_accounts": {
@@ -1912,7 +1902,96 @@
         },
         "show_order_actions_accessibility_label": "عرض إجراءات الطلب للطلب {{name}}",
         "view_order": "عرض الطلب",
-        "view_order_accessibility_label": "عرض الطلب {{orderName}}"
+        "view_order_accessibility_label": "عرض الطلب {{orderName}}",
+        "column_headers": {
+          "order": "أمر",
+          "total": "الإجمالي",
+          "actions_accessibility_label": "إجراءات",
+          "products_accessibility_label": "المنتجات"
+        },
+        "delivered": "تم التسليم {{date}}",
+        "empty_state_order_source_description": "الطلبات التي قدمها {{email}} فقط هي التي ستظهر هنا.",
+        "empty_state_redesign_cta": "تسوق الآن",
+        "empty_state_redesign_subtitle": "هل أنت مستعد للتسوق؟",
+        "empty_state_redesign_welcome": "أهلاً وسهلاً",
+        "empty_state_redesign_welcome_with_name": "أهلاً بك يا {{firstName}}",
+        "empty_state_subtitle": "اذهب إلى المتجر لتقديم طلب.",
+        "empty_state_title": "لا توجد طلبات بعد",
+        "empty_state_with_location_title": "لا توجد طلبات لـ {{locationName}}",
+        "empty_state_title_for_pending_orders": "لا توجد طلبات معلقة",
+        "no_order_banner": "لاختبار إضافتك على صفحة حالة الطلب، أنشئ طلبًا.",
+        "estimated_shortform": "تأسست عام {{date}}",
+        "estimated_delivery": "المتوقع {{date}}",
+        "one_images_accessibility_label": "يتضمن الطلب {{lineItemName1}}",
+        "two_images_accessibility_label": "يشمل الطلب {{lineItemName1}} و{{lineItemName2}}",
+        "three_images_accessibility_label": "الطلب يتضمن {{lineItemName1}} و{{lineItemName2}} و{{lineItemName3}}",
+        "four_images_accessibility_label": "يتضمن الطلب {{lineItemName1}} و{{lineItemName2}} و{{lineItemName3}} و{{lineItemName4}}",
+        "more_than_three_products_accessibility_label": "يشتمل الطلب على {{lineItemName1}} و{{lineItemName2}} و{{numberOfAdditionalProducts}} منتجات إضافية أخرى",
+        "more_than_four_products_accessibility_label": "يحتوي الطلب على {{lineItemName1}}، {{lineItemName2}}، {{lineItemName3}}، و{{numberOfAdditionalProducts}} منتجات إضافية",
+        "plus_more": "+{{numberOfAdditionalProducts}}",
+        "plus_more_products": "+{{numberOfAdditionalProducts}} منتجات",
+        "carousel": {
+          "one_products_accessibility_label": "الطلب يتضمن {{lineItemName1}} الكمية {{lineItemQuantity1}}",
+          "two_products_accessibility_label": "يتضمن الطلب {{lineItemName1}} الكمية {{lineItemQuantity1}}، {{lineItemName2}} الكمية {{lineItemQuantity2}}",
+          "three_products_accessibility_label": "الطلب يتضمن {{lineItemName1}} الكمية {{lineItemQuantity1}}، {{lineItemName2}} الكمية {{lineItemQuantity2}}، {{lineItemName3}} الكمية {{lineItemQuantity3}}",
+          "four_products_accessibility_label": "الطلب يتضمن {{lineItemName1}} الكمية {{lineItemQuantity1}}، {{lineItemName2}} الكمية {{lineItemQuantity2}}، {{lineItemName3}} الكمية {{lineItemQuantity3}}، {{lineItemName4}} الكمية {{lineItemQuantity4}}",
+          "five_products_accessibility_label": "يحتوي الطلب على {{lineItemName1}} الكمية {{lineItemQuantity1}}، {{lineItemName2}} الكمية {{lineItemQuantity2}}، {{lineItemName3}} الكمية {{lineItemQuantity3}}، {{lineItemName4}} الكمية {{lineItemQuantity4}}، {{lineItemName5}} الكمية {{lineItemQuantity5}}",
+          "six_products_accessibility_label": "يتضمن الطلب {{lineItemName1}} كمية {{lineItemQuantity1}}، {{lineItemName2}} كمية {{lineItemQuantity2}}، {{lineItemName3}} كمية {{lineItemQuantity3}}، {{lineItemName4}} كمية {{lineItemQuantity4}}، {{lineItemName5}} كمية {{lineItemQuantity5}}، {{lineItemName6}} كمية {{lineItemQuantity6}}",
+          "six_and_more_products_accessibility_label": "الطلب يتضمن {{lineItemName1}} كمية {{lineItemQuantity1}}، {{lineItemName2}} كمية {{lineItemQuantity2}}، {{lineItemName3}} كمية {{lineItemQuantity3}}، {{lineItemName4}} كمية {{lineItemQuantity4}}، {{lineItemName5}} كمية {{lineItemQuantity5}}، {{lineItemName6}} كمية {{lineItemQuantity6}} والمزيد",
+          "view_order_details": "عرض تفاصيل الطلب",
+          "previous": "السابق",
+          "next": "التالي"
+        },
+        "items": {
+          "one": "{{count}} عنصر",
+          "other": "{{count}} عناصر"
+        },
+        "no_filtered_results_description": "أزِل الفلاتر أو عدّلها للاطلاع على طلباتك",
+        "no_filtered_results_title": "لا توجد نتائج مصفاة",
+        "order_link": "عرض الطلب {{name}}",
+        "order_number": "اطلب {{name}}",
+        "orders_title": "تم التأكيد",
+        "pagination": {
+          "nav_accessibility_label": "أزرار التنقل الخاصة بالطلبات",
+          "next": "التالي",
+          "next_accessibility_label": "الطلبات التالية",
+          "previous": "السابق",
+          "previous_accessibility_label": "الطلبات السابقة",
+          "load_more": "أظهر المزيد",
+          "load_more_accessibility_label": "عرض المزيد من الطلبات"
+        },
+        "order_status_message": {
+          "list_view": {
+            "view_order_for_details": "عرض الطلب لمزيد من التفاصيل",
+            "estimated_delivery": "المتوقع {{date}}",
+            "last_updated": "آخر تحديث {{date}}"
+          },
+          "table_view": {
+            "estimated_delivery": "تاريخ التسليم المقدر {{date}}"
+          }
+        },
+        "payment_status": {
+          "gallery_view": {
+            "overdue": "الدفع متأخر",
+            "due": "تاريخ الاستحقاق {{date}}",
+            "due_today": "تاريخ الاستحقاق للدفع اليوم",
+            "due_without_date": "الدفع مستحق",
+            "due_on_fulfillment": "الدفع مستحق عند الإنجاز",
+            "pay_to_confirm": "ادفع للتأكيد",
+            "payment_not_due": "الدفع غير مستحق بعد"
+          },
+          "list_view": {
+            "overdue": "متأخر",
+            "due": "تاريخ الاستحقاق {{date}}",
+            "due_today": "مستحق اليوم",
+            "paid": "مدفوع",
+            "due_without_date": "مستحقة",
+            "due_on_fulfillment": "مستحق عند الاستيفاء",
+            "pay_to_confirm": "ادفع للتأكيد",
+            "payment_not_due": "ليس بعد استحقاقه"
+          }
+        },
+        "sort_by": "الترتيب حسب: {{option}}"
       },
       "order_status": {
         "attempted_delivery_label": "محاولة تسليم",
@@ -2010,7 +2089,14 @@
             "modal_accessibility_button_label": "تفاصيل وعود التسليم"
           }
         }
-      }
+      },
+      "list_layout_accessibility_label": "خيارات التخطيط",
+      "list_title": "الطلبات",
+      "list_title_with_pending_orders": "الطلبات:",
+      "list_title_confirmed_orders_accessibility_label": "الطلبات: مؤكدة",
+      "list_title_pending_orders_accessibility_label": "الطلبات: معلقة",
+      "switch_order_type_pending_orders_accessibility_label": "تبديل نوع الطلب، أنت تعرض حالياً الطلبات المعلّقة",
+      "switch_order_type_confirmed_orders_accessibility_label": "تغيير نوع الطلب، أنت تعرض الطلبات المؤكدة حالياً"
     },
     "order_details": {
       "grouped_view_components": {
@@ -2149,6 +2235,46 @@
       "total_savings": "إجمالي المدخرات",
       "show_order_summary": "إظهار ملخص الطلب",
       "hide_order_summary": "إخفاء ملخص الطلب"
+    },
+    "account_information": {
+      "verify_new_email_modal": {
+        "cancel_button": "إلغاء",
+        "cancel_button_accessibility_label": "إلغاء تحرير الملف الشخصي",
+        "email_resend_button_success_toast_message": "تم إرسال رمز التحقق",
+        "email_resend_button_failure_banner_message": "تعذّر إرسال رمز التحقق"
+      },
+      "marketing_preferences": {
+        "email_label": "بريد إلكتروني",
+        "pending_confirmation": "انقر على الرابط في بريدك الإلكتروني للتأكيد.",
+        "resend_email": "أعد إرسال البريد الإلكتروني",
+        "resend_email_success": "تم إرسال الرابط",
+        "title": "تفضيلات التسويق",
+        "unsubscribe_confirmation": {
+          "cancel": "إلغاء",
+          "description": "لن تتلقى بعد الآن رسائل تسويقية عبر البريد الإلكتروني من {{shopName}}",
+          "title": "إلغاء الاشتراك من رسائل البريد الإلكتروني؟",
+          "unsubscribe": "إلغاء الاشتراك"
+        },
+        "update_error": {
+          "description": "حدثت مشكلة أثناء تحديث تفضيلاتك التسويقية. حاول تحديث هذه الصفحة أو تحقق من اتصالك بالإنترنت."
+        },
+        "update_success": "تم تحديث تفضيلات التسويق"
+      },
+      "email_update_success_modal": {
+        "title": "التحقق من البريد الإلكتروني",
+        "description": "تم تحديث البريد الإلكتروني بنجاح. يتم إعادة التوجيه إلى صفحة تسجيل الدخول."
+      },
+      "profile_update_confirmation_message": "تم تحديث الملف الشخصي",
+      "email_update_confirmation_message": "تم تحديث البريد الإلكتروني إلى {{email}}",
+      "title": "الملف الشخصي",
+      "people": {
+        "pagination": {
+          "load_more": "أظهر المزيد",
+          "load_more_accessibility_label": "أظهر المزيد من الأشخاص",
+          "loading_accessibility_label": "جارٍ تحميل الأشخاص"
+        }
+      },
+      "add_button": "أضِف"
     }
   },
   "accessibility": {
