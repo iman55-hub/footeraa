@@ -816,7 +816,30 @@
         "duties_included_label": "يشمل الإجمالي الضرائب والرسوم الجمركية. لا توجد رسوم إضافية عند التسليم.",
         "discount_and_gift_card_savings_notice": "بعد خصم %{discount_amount} و %{gift_card_amount} من رصيد بطاقات الهدايا",
         "discount_savings_notice": "بعد خصم %{discount_amount}",
-        "gift_card_savings_notice": "بعد بطاقات هدايا بقيمة %{gift_card_amount}"
+        "gift_card_savings_notice": "بعد بطاقات هدايا بقيمة %{gift_card_amount}",
+        "title": "ملخص الطلب",
+        "group_title_label": "جزء من \"%{group_title}\"",
+        "for_add_on": "لـ: %{group_title}",
+        "from_shop_heading": "من %{shop_name}",
+        "from_other_stores_heading": "من متاجر أخرى",
+        "from_multiple_stores_heading": "من متاجر متعددة",
+        "number_items": {
+          "one": "%{count} بند",
+          "other": "%{count} بند"
+        },
+        "view_all_items": {
+          "one": "عرض %{count} عنصر",
+          "other": "عرض جميع العناصر (%{count})"
+        },
+        "more_items_modal": {
+          "search_item": "بحث",
+          "clear_search": "مسح البحث",
+          "empty_results": "لم يتم العثور على نتائج لـ \"%{searchText}\". يرجى التحقق من الهجاء أو استخدام كلمة أو عبارة مختلفة.",
+          "number_items_shown": "%{shownNumber} من %{totalNumber} عنصرًا"
+        },
+        "order_name_label": "اطلب %{name}",
+        "shopping_cart_label": "عربة التسوق",
+        "discount_title": "خصم"
       },
       "thank_you": {
         "thank_you_payments_app_pending_payment_description_default_with_email_pick_up": "سوف تتلقى رسالة تأكيد بالبريد الإلكتروني تحتوي على رقم طلبك قريبًا.",
@@ -1307,6 +1330,149 @@
       },
       "address_management": {
         "saved_with_store": "تم الحفظ مع هذا المتجر"
+      },
+      "remote_merchandise_only": {
+        "single_shop_transition": "جارٍ إعادة توجيهك إلى %{advertiser} لإكمال عملية الشراء."
+      },
+      "stock": {
+        "page_title": "مشكلات المخزون",
+        "title": "نفد المخزون",
+        "items_unavailable_notice": "بعض المنتجات غير متوفرة حالياً.",
+        "product_column_header": "المنتجات",
+        "quantity_column_header": "الكمية",
+        "price_column_header": "السعر",
+        "status_column_header": "الحالة",
+        "removed_from_cart_notice": "تمت إزالته من السلة",
+        "sold_out_label": "نفد المخزون",
+        "reduced_label": "مُخفَّض",
+        "reduced_with_quantity_label": "تبقى %{quantity_available} فقط",
+        "remove_from_cart_button_label": "إزالة من سلة التسوق",
+        "continue_shopping_button_label": "استمر/استمروا",
+        "go_back_to_cart_button_label": "العودة إلى سلة التسوق الخاصة بي",
+        "remove": "إزالة",
+        "return_to_store_label": "العودة إلى المتجر",
+        "continue_cta_label": "متابعة الدفع",
+        "item_label": {
+          "one": "{{count}} عنصر",
+          "other": "{{count}} عناصر"
+        },
+        "empty_cart_label": "سلة التسوق فارغة",
+        "quantity_update": {
+          "page_title": "تحديث الكمية",
+          "title": "تحديث الكمية",
+          "description": "تغيرت الكميات المتوفرة لهذه الأصناف وتم تحديثها في سلة التسوق الخاصة بك."
+        },
+        "unpurchasable_product": {
+          "title": "منتج غير قابل للشراء",
+          "header": "تمت إزالة بعض العناصر من سلة التسوق الخاصة بك",
+          "message": "هذه المنتجات غير متاحة لطلبات الشركات.",
+          "status_column_header": "غير متاح"
+        },
+        "unpurchasable_product_generic": {
+          "title": "منتج غير قابل للشراء",
+          "header": "تمت إزالة بعض العناصر من سلة التسوق الخاصة بك",
+          "message": "هذه العناصر غير متوفرة.",
+          "status_column_header": "غير متاح"
+        },
+        "unfulfillable_product": {
+          "title": "التوصيل غير متاح",
+          "message": {
+            "one": "طريقة التسليم هذه (%{delivery_method}) غير متاحة لهذا المنتج.",
+            "other": "لم تعد %{delivery_method} متاحة لهذه العناصر."
+          },
+          "default_message": {
+            "one": "طريقة التسليم المختارة غير متوفرة لهذا المنتج.",
+            "other": "طريقة التسليم المختارة لم تعد متوفرة لهذه العناصر."
+          }
+        },
+        "unshippable_product": {
+          "title": "لا يوجد توصيل متاح",
+          "header": {
+            "one": "لا يتوفر توصيل لـ %{count} من الأصناف",
+            "other": "لا تتوفر خدمة توصيل لـ %{count} من الأصناف"
+          },
+          "message": {
+            "one": "سيتم إزالة هذا المنتج من سلة التسوق الخاصة بك لأنه لا توجد طرق توصيل متاحة لعنوانك.",
+            "other": "ستتم إزالة هذه المنتجات من سلة التسوق الخاصة بك نظرًا لعدم توفر طرق توصيل لعنوانك."
+          },
+          "status_column_header": "لم يتم التسليم"
+        },
+        "price_update": {
+          "title": "تحديث السعر",
+          "description": "لقد تغيرت أسعار هذه السلع وتم تحديثها في سلة التسوق الخاصة بك.",
+          "updated_price": "السعر المحدث"
+        },
+        "price_and_quantity_update": {
+          "title": "تحديث السعر والكمية",
+          "description": "تغيرت أسعار وكميات هذه المنتجات المتاحة وتم تحديثها في سلة التسوق الخاصة بك."
+        },
+        "out_of_stock": {
+          "description": "هذه المنتجات لم تعد متوفرة وستتم إزالتها من سلة التسوق الخاصة بك.",
+          "items_unavailable": "بعض المنتجات لم تعد متوفرة وسيتم حذفها من سلة التسوق الخاصة بك.",
+          "missing_items": {
+            "title": {
+              "one": "{{count}} منتجًا لم يعد متوفرًا",
+              "other": "{{count}} عناصر لم تعد متوفرة"
+            },
+            "some_available_notice": {
+              "one": "لا تزال العناصر المتبقية متاحة للدفع. ستتم إزالة العنصر غير المتاح من سلة التسوق.",
+              "other": "العناصر المتبقية لا تزال متاحة للدفع. سيتم إزالة العناصر غير المتاحة من سلة التسوق."
+            },
+            "none_available_notice": {
+              "one": "هذا المنتج لم يعد متوفراً وقد تم حذفه من سلة مشترياتك.",
+              "other": "هذه المنتجات لم تعد متوفرة وتمت إزالتها من سلة التسوق الخاصة بك."
+            },
+            "mixed_issues_title": "بعض العناصر لم تعد متوفرة"
+          }
+        },
+        "out_of_stock_in_context_label": "هذا المنتج غير متوفر في بلدك/منطقتك."
+      },
+      "contextual_availability": {
+        "title": {
+          "one": "منتج غير متوفر",
+          "other": "منتجات غير متوفرة"
+        },
+        "products_not_available": {
+          "one": "ستتم إزالة هذا المنتج من سلة التسوق الخاصة بك لأنه غير متوفر في بلدك/منطقتك.",
+          "other": "ستُزال هذه المنتجات من سلة التسوق الخاصة بك لأنها غير متوفرة في بلدك/منطقتك."
+        },
+        "all_products_in_cart_unavailable": {
+          "one": "هذا المنتج غير متوفر في بلدك/منطقتك.",
+          "other": "هذه المنتجات غير متوفرة في بلدك/منطقتك."
+        },
+        "unavailable_label": "غير متاح"
+      },
+      "merchandise_unavailable_in_buyer_location": {
+        "banner_title": {
+          "some_products_one": "هذا المنتج غير متاح للتوصيل إلى %{location_name}.",
+          "some_products_other": "هذه المنتجات غير متاحة للتوصيل إلى %{location_name}.",
+          "all_products_one": "المنتج في سلة التسوق الخاصة بك غير متوفر للتسليم إلى %{location_name}.",
+          "all_products_other": "المنتجات الموجودة في سلة التسوق الخاصة بك غير متاحة للتسليم إلى %{location_name}."
+        },
+        "missing_country_fallback": "بلدك",
+        "indeterminate_location_fallback": "موقعك",
+        "cart_updated": "تم تحديث عربة التسوق الخاصة بك.",
+        "change_address_only": "غيّر عنوان التسليم للمتابعة.",
+        "change_address_or_remove": "تغيير عنوان التوصيل أو %{remove_action}.",
+        "remove_items_action": {
+          "one": "إزالة المنتج غير المتوفر",
+          "other": "إزالة العناصر غير المتوفرة"
+        },
+        "empty_cart_action": "إفراغ السلة والعودة إلى المتجر",
+        "unavailable_line_item": "%{product_name} / %{variant_label}"
+      },
+      "deliverability": {
+        "not_deliverable": {
+          "title": {
+            "one": "لا يتوفر توصيل لـ %{count} من الأصناف",
+            "other": "لا تتوفر خدمة توصيل لـ %{count} من الأصناف"
+          },
+          "message": {
+            "one": "سيتم إزالة هذا المنتج من سلة التسوق الخاصة بك لأنه لا توجد طرق توصيل متاحة لعنوانك.",
+            "other": "ستتم إزالة هذه المنتجات من سلة التسوق الخاصة بك نظرًا لعدم توفر طرق توصيل لعنوانك."
+          },
+          "label": "لم يتم التسليم"
+        }
       }
     },
     "notices": {
@@ -2086,9 +2252,87 @@
             "external_promise_brand_label": "التسليم بواسطة",
             "not_delivered_by_label": "تم التسليم بعد {{date}}",
             "delivery_guarantee_expired_label": "انتهى ضمان التسليم",
-            "modal_accessibility_button_label": "تفاصيل وعود التسليم"
+            "modal_accessibility_button_label": "تفاصيل وعود التسليم",
+            "download_shop_app_button_label": "تنزيل \"متجر\" للتتبع",
+            "track_with_shop_button_label": "تتبع مع التسوق",
+            "claim_shop_cash_button_label": "اطلب نقود المتجر"
+          },
+          "details_modal": {
+            "title": "ضمان التوصيل",
+            "active_delivery_guarantee_label": "التسليم بحلول {{date}}",
+            "expired_delivery_guarantee_description": "انتهت صلاحية ضمان \"وعد المتجر\" البالغ 30 يومًا لهذا الطلب.",
+            "expired_badge_label": "انتهت صلاحيته",
+            "order_includes_guarantees_label": "يشمل طلبك {{deliveryAgreementsCount}} ضمانات",
+            "order_includes_guarantees_description": "Shop Promise يضمن لك توصيل سريع وموثوق. اطالب باستعادة أموالك إذا وصل طلبك بعد {{date}}.",
+            "delivered_after_label": "تم التسليم بعد {{date}}",
+            "delivered_after_description": "نظرًا لتأخر وصول طلبك، فأنت مؤهل للمطالبة بـ {{amount}} رصيد تسوق.",
+            "claimed_shop_cash_description": "لأن هذا الطلب وصل متأخراً، طالبت بـ {{amount}} رصيد تسوق.",
+            "eligible_to_claim_shop_cash_description": "نظرًا لتأخر وصول طلبك، فأنت مؤهل للمطالبة بـ {{amount}} رصيد تسوق.",
+            "learn_more_button_label": "تعرف على المزيد",
+            "claim_shop_cash_button_label": "اطلب نقود المتجر",
+            "view_balance_in_shop_button_label": "عرض الرصيد في المتجر",
+            "scan_to_claim_shop_cash_label": "امسح ضوئيًا للمطالبة بـ {{amount}} من رصيد Shop Cash"
           }
-        }
+        },
+        "delivery_promise": {
+          "promise_line": {
+            "single_brand_label": "التسليم مدعوم بـ",
+            "mixed_brands_label": "توصيل مضمون",
+            "not_delivered_by_label": "لم يتم تسليمها بحلول {{date}}",
+            "modal_accessibility_button_label": "تفاصيل وعود التسليم"
+          },
+          "claim_shop_cash_cta": {
+            "has_shop_app_label": "احصل على رصيد المتجر الخاص بك",
+            "no_shop_app_label": "{{appDownloadLink}} للمطالبة بـ Shop Cash",
+            "download_shop_app_label": "تنزيل المتجر"
+          },
+          "details_modal": {
+            "title": "التسليم مدعوم بـ",
+            "modal_accessiblity_label": "تفاصيل وعود التسليم",
+            "delivery_guarantee_label": "ضمان التوصيل",
+            "delivery_by_label": "التسليم بحلول {{date}}",
+            "delivery_guaranteed_by_label": "ضمان التسليم بحلول {{date}}",
+            "shop_cash_claim": {
+              "may_be_eligible_label": "تضمن \"Shop Promise\" التوصيل السريع والموثوق. طالب باسترداد نقود \"Shop Cash\" إذا وصل طلبك متأخرًا.",
+              "may_be_eligible_not_authorized_label": "قد تكون مؤهلاً للمطالبة بمبلغ نقدي من المتجر لأن هذا الطلب وصل متأخرًا. سجّل الدخول لعرض التفاصيل.",
+              "redeemed_label": "لقد استرددت مبلغ Shop Cash بالفعل لأن هذا الطلب وصل متأخراً.",
+              "expired_label": "هذا الطلب غير مؤهل للمطالبة بالتسليم المتأخر لأن ضمان الـ 30 يومًا قد انتهى.",
+              "no_shop_cash_label": "هذا الطلب غير مؤهل للمطالبة بالتسليم المتأخر لأنه لم يتم دفعه باستخدام Shop Pay.",
+              "no_longer_guaranteed_label": "لم تعد هذه الأصناف مشمولة بضمان التسليم.",
+              "claim_shop_cash_title": "امسح للمطالبة بـ {{amount}} من رصيد Shop Cash",
+              "claim_shop_cash_description": "يمكنك استخدام رصيد Shop Cash الخاص بك في عمليات الشراء المستقبلية داخل تطبيق Shop."
+            }
+          }
+        },
+        "arrives": "تصل {{date}}",
+        "delivery_estimate_backed_by": "بدعم من",
+        "delivery_estimate_delayed_description": "خدمات التوصيل إلى منطقتك أبطأ من المعتاد. قد يصل طلبك متأخرًا.",
+        "delivery_estimate_delayed_title": "متأخر",
+        "delivery_estimate_early_description": "عمليات التسليم إلى منطقتك أسرع من المعتاد. قد يصل هذا الطلب مبكرًا.",
+        "delivery_exception_action_required": "الإجراء المطلوب",
+        "delivery_exception_attempted_action": "جدولة توصيل جديد",
+        "delivery_exception_attempted_description": "{{link}} مع {{carrier}} أو تحقق من إشعار التسليم",
+        "delivery_exception_attempted_description_unknown": "{{link}} أو التحقق من إشعار التسليم",
+        "delivery_exception_attempted_title": "تمت محاولة التسليم",
+        "delivery_exception_delivery_failed": "فشل التسليم",
+        "delivery_exception_failed_action": "تحقق مع {{carrier}}",
+        "delivery_exception_failed_description": "{{link}} أو اتصل بنا للمزيد من المعلومات",
+        "delivery_exception_failed_description_unknown": "تواصل مع شركة الشحن للحصول على مزيد من المعلومات",
+        "delivery_exception_failed_title": "لم يتم التسليم",
+        "delivery_exception_on_hold_action": "تحديث تفاصيل التسليم",
+        "delivery_exception_on_hold_description": "{{link}} مع {{carrier}} لإعادة طلبك إلى المسار الصحيح",
+        "delivery_exception_on_hold_description_unknown": "{{link}} لإعادة تنشيط طلبك",
+        "delivery_exception_on_hold_title": "قيد الانتظار",
+        "delivery_exception_returning_to_sender_action": "اتصل بـ {{carrier}}",
+        "delivery_exception_returning_to_sender_description": "{{link}} للمزيد من المعلومات",
+        "delivery_exception_returning_to_sender_description_unknown": "تواصل مع شركة الشحن للحصول على مزيد من المعلومات",
+        "delivery_exception_returning_to_sender_title": "لم يتم التسليم",
+        "delivery_exception_shop_promise_delivered_late_description": "طلبك مدعوم بـ Shop Promise. نظرًا لأنه وصل متأخرًا، يمكنك المطالبة بـ {{amount}} من رصيد Shop Cash.",
+        "delivery_exception_shop_promise_delivered_late_title": "تم التسليم متأخرًا",
+        "pickup_address_map_link_accessibility_label": "عرض موقع الاستلام في {{address}} على الخريطة (يفتح نافذة جديدة)",
+        "pickup_location_label": "موقع الاستلام:",
+        "pickup_qr_code_accessibility_label": "رمز QR للمسح الضوئي في المتجر عند استلام طلبك",
+        "predicted_by_shop": "توقعه شوب"
       },
       "list_layout_accessibility_label": "خيارات التخطيط",
       "list_title": "الطلبات",
@@ -2096,12 +2340,21 @@
       "list_title_confirmed_orders_accessibility_label": "الطلبات: مؤكدة",
       "list_title_pending_orders_accessibility_label": "الطلبات: معلقة",
       "switch_order_type_pending_orders_accessibility_label": "تبديل نوع الطلب، أنت تعرض حالياً الطلبات المعلّقة",
-      "switch_order_type_confirmed_orders_accessibility_label": "تغيير نوع الطلب، أنت تعرض الطلبات المؤكدة حالياً"
+      "switch_order_type_confirmed_orders_accessibility_label": "تغيير نوع الطلب، أنت تعرض الطلبات المؤكدة حالياً",
+      "status_mark_as_delivered": "تم التسليم",
+      "fulfillment_status_title": "حالة التنفيذ: {{status}}",
+      "buy_again": "اشترِ مرة أخرى",
+      "buy_again_accessibility_label": "اشترِ مرة أخرى للطلب {{orderId}}",
+      "manage": "إدارة",
+      "manage_accessiblity_label": "إدارة الطلب {{orderId}}",
+      "group_title_label": "جزء من: {{groupTitle}}",
+      "group_title_label_with_parent": "لـ: {{groupTitle}}"
     },
     "order_details": {
       "grouped_view_components": {
         "collapse_line_items": "إخفاء {{count}} عناصر",
-        "line_item_summary_list_accessibility_label": "العناصر في حزمة {{productTitle}}"
+        "line_item_summary_list_accessibility_label": "العناصر في حزمة {{productTitle}}",
+        "expand_line_items": "عرض {{count}} عنصر"
       },
       "discount": "خصم",
       "discount_order_stacking": {
@@ -2234,7 +2487,38 @@
       "show_items": "عرض العناصر",
       "total_savings": "إجمالي المدخرات",
       "show_order_summary": "إظهار ملخص الطلب",
-      "hide_order_summary": "إخفاء ملخص الطلب"
+      "hide_order_summary": "إخفاء ملخص الطلب",
+      "shipment_timeline": {
+        "expand_events_label": "عرض التفاصيل",
+        "expand_events_accessibility_label": "عرض تفاصيل شحن الطلب",
+        "hide_events_label": "إخفاء التفاصيل",
+        "hide_events_accessibility_label": "إخفاء تفاصيل شحن الطلب"
+      },
+      "addresses_section_title": "الفواتير والشحن",
+      "order_details": "تفاصيل الطلب",
+      "order_details_skeleton_accessibility_label": "سجل الدخول لعرض كافة تفاصيل الطلب.",
+      "billing_address": "عنوان الفواتير",
+      "card_ending_with": "تنتهي بـ {{lastDigits}}",
+      "contact": "جهات الاتصال",
+      "contact_information": "معلومات الاتصال",
+      "company": "شركة",
+      "company_and_location": "الشركة والموقع",
+      "fully_refunded_label": "تم رد الأموال",
+      "fulfillment_images": {
+        "one_products_accessibility_label": "يشمل الوفاء {{lineItemName1}} الكمية {{lineItemQuantity1}}",
+        "two_products_accessibility_label": "يشمل الوفاء {{lineItemName1}} كمية {{lineItemQuantity1}}، {{lineItemName2}} كمية {{lineItemQuantity2}}",
+        "three_products_accessibility_label": "يشمل التنفيذ {{lineItemName1}} الكمية {{lineItemQuantity1}}، {{lineItemName2}} الكمية {{lineItemQuantity2}}، {{lineItemName3}} الكمية {{lineItemQuantity3}}",
+        "four_products_accessibility_label": "يشمل الوفاء {{lineItemName1}} كمية {{lineItemQuantity1}}، و{{lineItemName2}} كمية {{lineItemQuantity2}}، و{{lineItemName3}} كمية {{lineItemQuantity3}}، و{{lineItemName4}} كمية {{lineItemQuantity4}}",
+        "five_products_accessibility_label": "يتضمن الإنجاز {{lineItemName1}} كمية {{lineItemQuantity1}}، {{lineItemName2}} كمية {{lineItemQuantity2}}، {{lineItemName3}} كمية {{lineItemQuantity3}}، {{lineItemName4}} كمية {{lineItemQuantity4}}، {{lineItemName5}} كمية {{lineItemQuantity5}}",
+        "six_products_accessibility_label": "يتضمن الإنجاز {{lineItemName1}} كمية {{lineItemQuantity1}}، {{lineItemName2}} كمية {{lineItemQuantity2}}، {{lineItemName3}} كمية {{lineItemQuantity3}}، {{lineItemName4}} كمية {{lineItemQuantity4}}، {{lineItemName5}} كمية {{lineItemQuantity5}}، {{lineItemName6}} كمية {{lineItemQuantity6}}",
+        "six_and_more_products_accessibility_label": "يتضمن الإنجاز {{lineItemName1}} كمية {{lineItemQuantity1}}، {{lineItemName2}} كمية {{lineItemQuantity2}}، {{lineItemName3}} كمية {{lineItemQuantity3}}، {{lineItemName4}} كمية {{lineItemQuantity4}}، {{lineItemName5}} كمية {{lineItemQuantity5}}، {{lineItemName6}} كمية {{lineItemQuantity6}} والمزيد"
+      },
+      "group_title_label": "جزء من: {{groupTitle}}",
+      "group_title_label_with_parent": "لـ: {{groupTitle}}",
+      "view_controls": {
+        "gallery": "معرض الصور",
+        "list": "قائمة"
+      }
     },
     "account_information": {
       "verify_new_email_modal": {
