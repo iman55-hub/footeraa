@@ -1750,7 +1750,12 @@
         "two_hours": "عادة ما يكون جاهزًا خلال ساعتين.",
         "four_hours": "عادة ما يكون جاهزًا خلال 4 ساعات",
         "twenty_four_hours": "عادة ما تكون جاهزة خلال 24 ساعة",
-        "two_to_four_days": "جاهز عادةً في غضون 2-4 أيام"
+        "two_to_four_days": "جاهز عادةً في غضون 2-4 أيام",
+        "five_or_more_days": "عادةً ما تكون جاهزة في غضون 5 أيام أو أكثر",
+        "zero_to_two_hours": "عادة ما يكون جاهزًا خلال ساعتين.",
+        "two_to_four_hours": "عادة ما يكون جاهزًا خلال 4 ساعات",
+        "immediately": "جاهز للاستلام الآن",
+        "next_day": "جاهز للاستلام في اليوم التالي"
       }
     },
     "pagination": {
@@ -1822,6 +1827,11 @@
       "bad_domain": "يحتوي على اسم نطاق غير صالح",
       "taken": "تم الاستيلاء عليها بالفعل",
       "contains_html_tags": "لا يمكن أن تحتوي على وسوم HTML"
+    },
+    "subscriptions": {
+      "buyer_consent_product": "هذا العنصر هو عملية شراء متكررة أو مؤجلة. من خلال المتابعة، أوافق على %{cancellationPolicyLink} وأفوضكم بتحصيل قيمة طريقة الدفع الخاصة بي بالأسعار والوتيرة والتواريخ المذكورة في هذه الصفحة حتى يتم تلبية طلبي أو إلغائه، إذا سمح بذلك.",
+      "buyer_consent_cart": "واحد أو أكثر من العناصر الموجودة في سلة التسوق الخاصة بك هو عملية شراء متكررة أو مؤجلة. من خلال الاستمرار، أوافق على %{cancellationPolicyLink وأفوضك بتحصيل رسوم من طريقة الدفع الخاصة بي بالأسعار والتكرار والتواريخ المذكورة في هذه الصفحة حتى يتم تنفيذ طلبي أو أقوم بالإلغاء، إذا سمح بذلك.",
+      "cancellation_policy": "سياسة الإلغاء"
     }
   },
   "customer_accounts": {
@@ -2735,7 +2745,14 @@
         "cancel_button": "إلغاء",
         "cancel_button_accessibility_label": "إلغاء تحرير الملف الشخصي",
         "email_resend_button_success_toast_message": "تم إرسال رمز التحقق",
-        "email_resend_button_failure_banner_message": "تعذّر إرسال رمز التحقق"
+        "email_resend_button_failure_banner_message": "تعذّر إرسال رمز التحقق",
+        "title": "تحقق من بريدك الإلكتروني الجديد",
+        "description": "الآن، أدخل الرمز المكون من 6 أرقام والذي أُرسِل إلى بريدك الإلكتروني الجديد:",
+        "one_time_password_label": "رمز مكون من 6 أرقام",
+        "email_resend_button": "إعادة إرسال الرمز",
+        "email_resend_button_accessibility_label": "إعادة إرسال رمز التحقق",
+        "verify_button": "تحقق",
+        "verify_button_accessibility_label": "التحقق من كلمة المرور لمرة واحدة"
       },
       "marketing_preferences": {
         "email_label": "بريد إلكتروني",
@@ -2768,7 +2785,41 @@
           "loading_accessibility_label": "جارٍ تحميل الأشخاص"
         }
       },
-      "add_button": "أضِف"
+      "add_button": "أضِف",
+      "loading_accessibility_message": "جارٍ تحميل معلومات الحساب",
+      "loading_finished_accessibility_message": "تم تحميل معلومات الحساب",
+      "profile_card": {
+        "cancel": "إلغاء",
+        "cancel_accessibility_label": "إلغاء تحرير الملف الشخصي",
+        "edit": "تعديل",
+        "edit_accessibility_label": "تعديل الملف الشخصي",
+        "email_help_text": "لا يمكن تعديل البريد الإلكتروني",
+        "editable_email_help_text": "يُستخدم هذا البريد الإلكتروني لتسجيل الدخول وتحديثات الطلبات.",
+        "first_name": "الاسم الأول",
+        "last_name": "اسم العائلة",
+        "email": "بريد إلكتروني",
+        "no_name_provided_accessibility_label": "لم يتم إضافة اسم",
+        "phone_number_help_text": "لا يمكن تعديل رقم الهاتف",
+        "save": "حفظ",
+        "save_accessibility_label": "حفظ الملف الشخصي",
+        "title": "الملف الشخصي",
+        "errors": {
+          "name_too_long": "{{fieldName}} طويل جدًا (الحد الأقصى هو 255 حرفًا)",
+          "name_cannot_contain_url": "{{fieldName}} لا يمكن أن يحتوي على رابط",
+          "name_cannot_contain_html_tags": "{{fieldName}} لا يمكن أن يحتوي على علامات HTML",
+          "email_cant_be_blank": "البريد الإلكتروني لا يمكن أن يكون فارغًا",
+          "invalid_email_format": "أدخل بريدًا إلكترونيًا صحيحًا"
+        }
+      },
+      "verify_current_email_modal": {
+        "cancel_button": "إلغاء",
+        "cancel_button_accessibility_label": "إلغاء تحرير الملف الشخصي",
+        "description": "أدخل الرمز المكون من 6 أرقام الذي أُرسل إلى بريدك الإلكتروني الأصلي:",
+        "email_resend_button_accessibility_label": "إعادة إرسال رمز التحقق",
+        "title": "تأكيد هويتك",
+        "verify_button": "التالي",
+        "verify_button_accessibility_label": "التحقق من بريدك الإلكتروني الحالي"
+      }
     },
     "addresses": {
       "add_button": "أضف العنوان",
@@ -2931,6 +2982,81 @@
         "success": "تم تحديث طريقة الدفع",
         "use_new_payment_method": "+ استخدام طريقة دفع جديدة"
       }
+    },
+    "callback": {
+      "try_again": "حاول مرة أخرى"
+    },
+    "date": {
+      "humanize": {
+        "lessThanOneHourAgo": {
+          "one": "{{count}} دقيقة مضت",
+          "other": "{{count}} منذ دقائق"
+        },
+        "lessThanOneMinuteAgo": "لتوّي",
+        "yesterday": "بالأمس في {{time}}",
+        "today": "اليوم في {{time}}",
+        "tomorrow": "غدًا الساعة {{time}}"
+      }
+    },
+    "enable_javascript": "لعرض حسابك، قم بتمكين JavaScript في إعدادات متصفحك أو قم بتسجيل الدخول باستخدام متصفح آخر.",
+    "navigation_and_structure": {
+      "account_menu": {
+        "hide_accessibility_label": "إخفاء قائمة الحساب",
+        "show_accessibility_label": "إظهار قائمة الحساب",
+        "nav_accessibility_label": "التنقل في الحساب",
+        "open_menu_accessibility_label": "فتح تنقل الحساب",
+        "close_menu_accessibility_label": "إغلاق تصفح الحساب",
+        "label": "حساب",
+        "loading_message": "جارٍ تحميل التنقل بين الحسابات"
+      },
+      "action_menu_accessibility_label": "إجراءات أخرى",
+      "back_button_accessibility_label": "الظهر",
+      "go_to_store_link": "اذهب إلى المتجر",
+      "orders_link_label": "الطلبات",
+      "subscriptions_link_label": "الاشتراكات",
+      "close_menu_accessibility_label": "إغلاق التنقل الرئيسي",
+      "contact_email_subject": "جهة اتصال من المتجر الإلكتروني {{shopName}}",
+      "contact_link": "معلومات الاتصال",
+      "delete_confirmation": {
+        "cancel": "إلغاء",
+        "delete": "حذف"
+      },
+      "dismiss_toast": "رفض",
+      "document_title": "{{sectionName}} - {{shopName}} - الحساب",
+      "loading_message": "جاري التحميل",
+      "loading_policy_content_accessibility_label": "تحميل محتوى السياسة",
+      "loading_section_accessibility_label": "جار التحميل {{sectionName}}",
+      "policy_load_error": "تعذر تحميل {{policyName}}",
+      "policy_try_again": "حاول مرة أخرى",
+      "log_out_link": "تسجيل الخروج",
+      "logout_overlay_label": "تسجيل الخروج...",
+      "nav_label_accessibility_label": "الملاحة الرئيسية",
+      "navigation_accessibility_message": "لقد انتقلت إلى {{sectionName}}",
+      "open_menu_accessibility_label": "فتح التنقل الرئيسي",
+      "shop_logo_accessibility_label": "شعار {{shopName}}",
+      "store_credit_accessibility_label": "{{formattedBalance}} رصيد المتجر",
+      "store_credit_balances_list_accessibility_label": "أرصدة رصيد المتجر",
+      "store_credit_multi_currency_accessibility_label": {
+        "one": "{{formattedBalance}} و {{count}} المزيد من رصيد المتجر بعملة",
+        "other": "{{formattedBalance}} و {{count}} المزيد من أرصدة المتجر بالعملات"
+      },
+      "settings_link": "الإعدادات",
+      "country_switcher_toast_message": "البلد الذي تم التبديل إليه {{countryName}}",
+      "switch_country": "تغيير البلد",
+      "no_countries_found": "لا توجد بلدان مطابقة",
+      "location_switcher_toast_message": "تم تغيير الموقع إلى {{locationName}}",
+      "switch_location": "تغيير الموقع",
+      "no_locations_found": "لم يتم العثور على مواقع",
+      "try_new_search": "جرّب بحثًا جديدًا",
+      "view_details": "عرض التفاصيل",
+      "company_location": "موقع الشركة",
+      "search": "بحث",
+      "skip_to_content": "تجاوز إلى المحتوى"
+    },
+    "announcement_bar": {
+      "expand_label": "توسيع شريط الإعلانات",
+      "collapse_label": "طي شريط الإعلان",
+      "close_label": "إغلاق شريط الإعلانات"
     }
   },
   "accessibility": {
