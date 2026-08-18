@@ -341,7 +341,7 @@
   "shopify": {
     "checkout": {
       "order_summary": {
-        "vat_label_html": "    ni     "
+        "vat_label_html": "​"
       }
     }
   }
